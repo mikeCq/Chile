@@ -23,51 +23,112 @@ Partial Class FInicio
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FInicio))
         Dim IdProduccionLabel As System.Windows.Forms.Label
         Dim FechaLabel As System.Windows.Forms.Label
         Dim PrecioLabel As System.Windows.Forms.Label
         Dim CantidadBotesLabel As System.Windows.Forms.Label
         Dim SumaBotesLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FInicio))
+        Dim Label1 As System.Windows.Forms.Label
+        Dim Label2 As System.Windows.Forms.Label
+        Dim Label3 As System.Windows.Forms.Label
+        Dim Label4 As System.Windows.Forms.Label
+        Dim Label5 As System.Windows.Forms.Label
         Me.ChilesDBData = New Chiles.ChilesDBData()
         Me.ProduccionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProduccionTableAdapter = New Chiles.ChilesDBDataTableAdapters.ProduccionTableAdapter()
         Me.TableAdapterManager = New Chiles.ChilesDBDataTableAdapters.TableAdapterManager()
         Me.ProduccionBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.ProduccionBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
+        Me.Buscar = New System.Windows.Forms.ToolStripButton()
         Me.ProduccionDataGridView = New System.Windows.Forms.DataGridView()
-        Me.IdProduccionTextBox = New System.Windows.Forms.TextBox()
-        Me.FechaDateTimePicker = New System.Windows.Forms.DateTimePicker()
-        Me.PrecioTextBox = New System.Windows.Forms.TextBox()
-        Me.CantidadBotesTextBox = New System.Windows.Forms.TextBox()
-        Me.SumaBotesTextBox = New System.Windows.Forms.TextBox()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdProduccionTextBox = New System.Windows.Forms.TextBox()
+        Me.FechaDateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.PrecioTextBox = New System.Windows.Forms.TextBox()
+        Me.CantidadBotesTextBox = New System.Windows.Forms.TextBox()
+        Me.SumaBotesTextBox = New System.Windows.Forms.TextBox()
+        Me.TxIdProduccion = New System.Windows.Forms.TextBox()
+        Me.DtFecha = New System.Windows.Forms.DateTimePicker()
+        Me.TxPrecio = New System.Windows.Forms.TextBox()
+        Me.TxCantidadBotes = New System.Windows.Forms.TextBox()
+        Me.TxResultado = New System.Windows.Forms.TextBox()
         IdProduccionLabel = New System.Windows.Forms.Label()
         FechaLabel = New System.Windows.Forms.Label()
         PrecioLabel = New System.Windows.Forms.Label()
         CantidadBotesLabel = New System.Windows.Forms.Label()
         SumaBotesLabel = New System.Windows.Forms.Label()
+        Label1 = New System.Windows.Forms.Label()
+        Label2 = New System.Windows.Forms.Label()
+        Label3 = New System.Windows.Forms.Label()
+        Label4 = New System.Windows.Forms.Label()
+        Label5 = New System.Windows.Forms.Label()
         CType(Me.ChilesDBData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProduccionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProduccionBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ProduccionBindingNavigator.SuspendLayout()
         CType(Me.ProduccionDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'IdProduccionLabel
+        '
+        IdProduccionLabel.AutoSize = True
+        IdProduccionLabel.Location = New System.Drawing.Point(12, 296)
+        IdProduccionLabel.Name = "IdProduccionLabel"
+        IdProduccionLabel.Size = New System.Drawing.Size(76, 13)
+        IdProduccionLabel.TabIndex = 2
+        IdProduccionLabel.Text = "Id Produccion:"
+        '
+        'FechaLabel
+        '
+        FechaLabel.AutoSize = True
+        FechaLabel.Location = New System.Drawing.Point(12, 323)
+        FechaLabel.Name = "FechaLabel"
+        FechaLabel.Size = New System.Drawing.Size(40, 13)
+        FechaLabel.TabIndex = 4
+        FechaLabel.Text = "Fecha:"
+        '
+        'PrecioLabel
+        '
+        PrecioLabel.AutoSize = True
+        PrecioLabel.Location = New System.Drawing.Point(12, 348)
+        PrecioLabel.Name = "PrecioLabel"
+        PrecioLabel.Size = New System.Drawing.Size(40, 13)
+        PrecioLabel.TabIndex = 6
+        PrecioLabel.Text = "Precio:"
+        '
+        'CantidadBotesLabel
+        '
+        CantidadBotesLabel.AutoSize = True
+        CantidadBotesLabel.Location = New System.Drawing.Point(12, 374)
+        CantidadBotesLabel.Name = "CantidadBotesLabel"
+        CantidadBotesLabel.Size = New System.Drawing.Size(82, 13)
+        CantidadBotesLabel.TabIndex = 8
+        CantidadBotesLabel.Text = "Cantidad Botes:"
+        '
+        'SumaBotesLabel
+        '
+        SumaBotesLabel.AutoSize = True
+        SumaBotesLabel.Location = New System.Drawing.Point(12, 400)
+        SumaBotesLabel.Name = "SumaBotesLabel"
+        SumaBotesLabel.Size = New System.Drawing.Size(67, 13)
+        SumaBotesLabel.TabIndex = 10
+        SumaBotesLabel.Text = "Suma Botes:"
         '
         'ChilesDBData
         '
@@ -95,7 +156,7 @@ Partial Class FInicio
         Me.ProduccionBindingNavigator.BindingSource = Me.ProduccionBindingSource
         Me.ProduccionBindingNavigator.CountItem = Me.BindingNavigatorCountItem
         Me.ProduccionBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.ProduccionBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.ProduccionBindingNavigatorSaveItem})
+        Me.ProduccionBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.ProduccionBindingNavigatorSaveItem, Me.Buscar})
         Me.ProduccionBindingNavigator.Location = New System.Drawing.Point(0, 0)
         Me.ProduccionBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
         Me.ProduccionBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
@@ -103,9 +164,34 @@ Partial Class FInicio
         Me.ProduccionBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.ProduccionBindingNavigator.Name = "ProduccionBindingNavigator"
         Me.ProduccionBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.ProduccionBindingNavigator.Size = New System.Drawing.Size(750, 25)
+        Me.ProduccionBindingNavigator.Size = New System.Drawing.Size(544, 25)
         Me.ProduccionBindingNavigator.TabIndex = 0
         Me.ProduccionBindingNavigator.Text = "BindingNavigator1"
+        '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(37, 22)
+        Me.BindingNavigatorCountItem.Text = "de {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Número total de elementos"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorDeleteItem.Text = "Eliminar"
         '
         'BindingNavigatorMoveFirstItem
         '
@@ -139,16 +225,9 @@ Partial Class FInicio
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Posición actual"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(37, 22)
-        Me.BindingNavigatorCountItem.Text = "de {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Número total de elementos"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
         Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
         '
         'BindingNavigatorMoveNextItem
@@ -171,26 +250,8 @@ Partial Class FInicio
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorDeleteItem.Text = "Eliminar"
         '
         'ProduccionBindingNavigatorSaveItem
         '
@@ -200,6 +261,16 @@ Partial Class FInicio
         Me.ProduccionBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
         Me.ProduccionBindingNavigatorSaveItem.Text = "Guardar datos"
         '
+        'Buscar
+        '
+        Me.Buscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.Buscar.Image = CType(resources.GetObject("Buscar.Image"), System.Drawing.Image)
+        Me.Buscar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.Buscar.Name = "Buscar"
+        Me.Buscar.Size = New System.Drawing.Size(23, 22)
+        Me.Buscar.Text = "ToolStripButton1"
+        Me.Buscar.ToolTipText = "NvBuscar"
+        '
         'ProduccionDataGridView
         '
         Me.ProduccionDataGridView.AutoGenerateColumns = False
@@ -207,95 +278,10 @@ Partial Class FInicio
         Me.ProduccionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ProduccionDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5})
         Me.ProduccionDataGridView.DataSource = Me.ProduccionBindingSource
-        Me.ProduccionDataGridView.Location = New System.Drawing.Point(0, 251)
+        Me.ProduccionDataGridView.Location = New System.Drawing.Point(0, 437)
         Me.ProduccionDataGridView.Name = "ProduccionDataGridView"
         Me.ProduccionDataGridView.Size = New System.Drawing.Size(543, 220)
         Me.ProduccionDataGridView.TabIndex = 1
-        '
-        'IdProduccionLabel
-        '
-        IdProduccionLabel.AutoSize = True
-        IdProduccionLabel.Location = New System.Drawing.Point(12, 39)
-        IdProduccionLabel.Name = "IdProduccionLabel"
-        IdProduccionLabel.Size = New System.Drawing.Size(76, 13)
-        IdProduccionLabel.TabIndex = 2
-        IdProduccionLabel.Text = "Id Produccion:"
-        '
-        'IdProduccionTextBox
-        '
-        Me.IdProduccionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "IdProduccion", True))
-        Me.IdProduccionTextBox.Location = New System.Drawing.Point(100, 36)
-        Me.IdProduccionTextBox.Name = "IdProduccionTextBox"
-        Me.IdProduccionTextBox.Size = New System.Drawing.Size(200, 20)
-        Me.IdProduccionTextBox.TabIndex = 3
-        '
-        'FechaLabel
-        '
-        FechaLabel.AutoSize = True
-        FechaLabel.Location = New System.Drawing.Point(12, 66)
-        FechaLabel.Name = "FechaLabel"
-        FechaLabel.Size = New System.Drawing.Size(40, 13)
-        FechaLabel.TabIndex = 4
-        FechaLabel.Text = "Fecha:"
-        '
-        'FechaDateTimePicker
-        '
-        Me.FechaDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ProduccionBindingSource, "Fecha", True))
-        Me.FechaDateTimePicker.Location = New System.Drawing.Point(100, 62)
-        Me.FechaDateTimePicker.Name = "FechaDateTimePicker"
-        Me.FechaDateTimePicker.Size = New System.Drawing.Size(200, 20)
-        Me.FechaDateTimePicker.TabIndex = 5
-        '
-        'PrecioLabel
-        '
-        PrecioLabel.AutoSize = True
-        PrecioLabel.Location = New System.Drawing.Point(12, 91)
-        PrecioLabel.Name = "PrecioLabel"
-        PrecioLabel.Size = New System.Drawing.Size(40, 13)
-        PrecioLabel.TabIndex = 6
-        PrecioLabel.Text = "Precio:"
-        '
-        'PrecioTextBox
-        '
-        Me.PrecioTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "Precio", True))
-        Me.PrecioTextBox.Location = New System.Drawing.Point(100, 88)
-        Me.PrecioTextBox.Name = "PrecioTextBox"
-        Me.PrecioTextBox.Size = New System.Drawing.Size(200, 20)
-        Me.PrecioTextBox.TabIndex = 7
-        '
-        'CantidadBotesLabel
-        '
-        CantidadBotesLabel.AutoSize = True
-        CantidadBotesLabel.Location = New System.Drawing.Point(12, 117)
-        CantidadBotesLabel.Name = "CantidadBotesLabel"
-        CantidadBotesLabel.Size = New System.Drawing.Size(82, 13)
-        CantidadBotesLabel.TabIndex = 8
-        CantidadBotesLabel.Text = "Cantidad Botes:"
-        '
-        'CantidadBotesTextBox
-        '
-        Me.CantidadBotesTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "CantidadBotes", True))
-        Me.CantidadBotesTextBox.Location = New System.Drawing.Point(100, 114)
-        Me.CantidadBotesTextBox.Name = "CantidadBotesTextBox"
-        Me.CantidadBotesTextBox.Size = New System.Drawing.Size(200, 20)
-        Me.CantidadBotesTextBox.TabIndex = 9
-        '
-        'SumaBotesLabel
-        '
-        SumaBotesLabel.AutoSize = True
-        SumaBotesLabel.Location = New System.Drawing.Point(12, 143)
-        SumaBotesLabel.Name = "SumaBotesLabel"
-        SumaBotesLabel.Size = New System.Drawing.Size(67, 13)
-        SumaBotesLabel.TabIndex = 10
-        SumaBotesLabel.Text = "Suma Botes:"
-        '
-        'SumaBotesTextBox
-        '
-        Me.SumaBotesTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "SumaBotes", True))
-        Me.SumaBotesTextBox.Location = New System.Drawing.Point(100, 140)
-        Me.SumaBotesTextBox.Name = "SumaBotesTextBox"
-        Me.SumaBotesTextBox.Size = New System.Drawing.Size(200, 20)
-        Me.SumaBotesTextBox.TabIndex = 11
         '
         'DataGridViewTextBoxColumn1
         '
@@ -328,18 +314,150 @@ Partial Class FInicio
         Me.DataGridViewTextBoxColumn5.HeaderText = "Suma De Botes"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
         '
+        'IdProduccionTextBox
+        '
+        Me.IdProduccionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "IdProduccion", True))
+        Me.IdProduccionTextBox.Location = New System.Drawing.Point(100, 293)
+        Me.IdProduccionTextBox.Name = "IdProduccionTextBox"
+        Me.IdProduccionTextBox.Size = New System.Drawing.Size(200, 20)
+        Me.IdProduccionTextBox.TabIndex = 3
+        '
+        'FechaDateTimePicker
+        '
+        Me.FechaDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ProduccionBindingSource, "Fecha", True))
+        Me.FechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.FechaDateTimePicker.Location = New System.Drawing.Point(100, 319)
+        Me.FechaDateTimePicker.Name = "FechaDateTimePicker"
+        Me.FechaDateTimePicker.Size = New System.Drawing.Size(200, 20)
+        Me.FechaDateTimePicker.TabIndex = 5
+        '
+        'PrecioTextBox
+        '
+        Me.PrecioTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "Precio", True))
+        Me.PrecioTextBox.Location = New System.Drawing.Point(100, 345)
+        Me.PrecioTextBox.Name = "PrecioTextBox"
+        Me.PrecioTextBox.Size = New System.Drawing.Size(200, 20)
+        Me.PrecioTextBox.TabIndex = 7
+        '
+        'CantidadBotesTextBox
+        '
+        Me.CantidadBotesTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "CantidadBotes", True))
+        Me.CantidadBotesTextBox.Location = New System.Drawing.Point(100, 371)
+        Me.CantidadBotesTextBox.Name = "CantidadBotesTextBox"
+        Me.CantidadBotesTextBox.Size = New System.Drawing.Size(200, 20)
+        Me.CantidadBotesTextBox.TabIndex = 9
+        '
+        'SumaBotesTextBox
+        '
+        Me.SumaBotesTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "SumaBotes", True))
+        Me.SumaBotesTextBox.Location = New System.Drawing.Point(100, 397)
+        Me.SumaBotesTextBox.Name = "SumaBotesTextBox"
+        Me.SumaBotesTextBox.Size = New System.Drawing.Size(200, 20)
+        Me.SumaBotesTextBox.TabIndex = 11
+        '
+        'TxIdProduccion
+        '
+        Me.TxIdProduccion.Location = New System.Drawing.Point(100, 50)
+        Me.TxIdProduccion.Name = "TxIdProduccion"
+        Me.TxIdProduccion.Size = New System.Drawing.Size(200, 20)
+        Me.TxIdProduccion.TabIndex = 12
+        '
+        'DtFecha
+        '
+        Me.DtFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DtFecha.Location = New System.Drawing.Point(100, 77)
+        Me.DtFecha.Name = "DtFecha"
+        Me.DtFecha.Size = New System.Drawing.Size(200, 20)
+        Me.DtFecha.TabIndex = 13
+        '
+        'TxPrecio
+        '
+        Me.TxPrecio.Location = New System.Drawing.Point(100, 104)
+        Me.TxPrecio.Name = "TxPrecio"
+        Me.TxPrecio.Size = New System.Drawing.Size(200, 20)
+        Me.TxPrecio.TabIndex = 14
+        '
+        'TxCantidadBotes
+        '
+        Me.TxCantidadBotes.Location = New System.Drawing.Point(100, 131)
+        Me.TxCantidadBotes.Name = "TxCantidadBotes"
+        Me.TxCantidadBotes.Size = New System.Drawing.Size(200, 20)
+        Me.TxCantidadBotes.TabIndex = 15
+        '
+        'TxResultado
+        '
+        Me.TxResultado.Location = New System.Drawing.Point(100, 158)
+        Me.TxResultado.Name = "TxResultado"
+        Me.TxResultado.Size = New System.Drawing.Size(200, 20)
+        Me.TxResultado.TabIndex = 16
+        '
+        'Label1
+        '
+        Label1.AutoSize = True
+        Label1.Location = New System.Drawing.Point(12, 161)
+        Label1.Name = "Label1"
+        Label1.Size = New System.Drawing.Size(67, 13)
+        Label1.TabIndex = 10
+        Label1.Text = "Suma Botes:"
+        '
+        'Label2
+        '
+        Label2.AutoSize = True
+        Label2.Location = New System.Drawing.Point(12, 134)
+        Label2.Name = "Label2"
+        Label2.Size = New System.Drawing.Size(82, 13)
+        Label2.TabIndex = 8
+        Label2.Text = "Cantidad Botes:"
+        '
+        'Label3
+        '
+        Label3.AutoSize = True
+        Label3.Location = New System.Drawing.Point(12, 107)
+        Label3.Name = "Label3"
+        Label3.Size = New System.Drawing.Size(40, 13)
+        Label3.TabIndex = 6
+        Label3.Text = "Precio:"
+        '
+        'Label4
+        '
+        Label4.AutoSize = True
+        Label4.Location = New System.Drawing.Point(12, 79)
+        Label4.Name = "Label4"
+        Label4.Size = New System.Drawing.Size(40, 13)
+        Label4.TabIndex = 4
+        Label4.Text = "Fecha:"
+        '
+        'Label5
+        '
+        Label5.AutoSize = True
+        Label5.Location = New System.Drawing.Point(12, 53)
+        Label5.Name = "Label5"
+        Label5.Size = New System.Drawing.Size(76, 13)
+        Label5.TabIndex = 2
+        Label5.Text = "Id Produccion:"
+        '
         'FInicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(750, 806)
+        Me.ClientSize = New System.Drawing.Size(544, 669)
+        Me.Controls.Add(Me.TxResultado)
+        Me.Controls.Add(Me.TxCantidadBotes)
+        Me.Controls.Add(Me.TxPrecio)
+        Me.Controls.Add(Me.DtFecha)
+        Me.Controls.Add(Me.TxIdProduccion)
+        Me.Controls.Add(Label5)
         Me.Controls.Add(IdProduccionLabel)
+        Me.Controls.Add(Label4)
         Me.Controls.Add(Me.IdProduccionTextBox)
         Me.Controls.Add(FechaLabel)
+        Me.Controls.Add(Label3)
         Me.Controls.Add(Me.FechaDateTimePicker)
         Me.Controls.Add(PrecioLabel)
+        Me.Controls.Add(Label2)
         Me.Controls.Add(Me.PrecioTextBox)
         Me.Controls.Add(CantidadBotesLabel)
+        Me.Controls.Add(Label1)
         Me.Controls.Add(Me.CantidadBotesTextBox)
         Me.Controls.Add(SumaBotesLabel)
         Me.Controls.Add(Me.SumaBotesTextBox)
@@ -386,4 +504,10 @@ Partial Class FInicio
     Friend WithEvents PrecioTextBox As TextBox
     Friend WithEvents CantidadBotesTextBox As TextBox
     Friend WithEvents SumaBotesTextBox As TextBox
+    Friend WithEvents Buscar As ToolStripButton
+    Friend WithEvents TxIdProduccion As TextBox
+    Friend WithEvents DtFecha As DateTimePicker
+    Friend WithEvents TxPrecio As TextBox
+    Friend WithEvents TxCantidadBotes As TextBox
+    Friend WithEvents TxResultado As TextBox
 End Class
