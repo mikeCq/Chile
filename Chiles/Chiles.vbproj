@@ -115,6 +115,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PRODUCCION.Designer.vb">
+      <DependentUpon>PRODUCCION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCCION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRODUCTOS.Designer.vb">
+      <DependentUpon>PRODUCTOS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCTOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VarGlob.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +138,12 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRODUCCION.resx">
+      <DependentUpon>PRODUCCION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRODUCTOS.resx">
+      <DependentUpon>PRODUCTOS.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +177,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>ChilesDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Iconos\Actualizar.ico" />
+    <Content Include="Iconos\Black Icon Package Icon 36.ico" />
+    <Content Include="Iconos\Eliminar.ico" />
+    <Content Include="Iconos\Guardar.ico" />
+    <Content Include="Iconos\Nuevo.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
