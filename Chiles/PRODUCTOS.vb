@@ -12,7 +12,6 @@ Public Class PRODUCTOS
     End Sub
     Private Sub TsNuevo_Click(sender As Object, e As EventArgs) Handles TsNuevo.Click
         Nuevo()
-
     End Sub
     Private Sub TsGuardar_Click(sender As Object, e As EventArgs) Handles TsGuardar.Click
         Try
@@ -60,15 +59,30 @@ Public Class PRODUCTOS
         End Try
     End Sub
 
-    Private Sub SeleccionPRoducto(sender As Object, e As DataGridViewCellEventArgs) Handles DgProductos.DoubleClick
+    Private Sub SeleccionPRoducto(sender As Object, e As EventArgs) Handles DgProductos.DoubleClick
         If DgProductos.RowCount = 0 Then
             MessageBox.Show("No hay datos para seleccionar.")
         ElseIf Not DgProductos Is Nothing Then
             Try
+                cnn.Open()
+                Dim cmd As New SqlCommand("sp_SelProducto", cnn)
 
+                cmd.CommandType = CommandType.StoredProcedure
+
+                cmd.Parameters.Add(New SqlClient.SqlParameter("@idproducto", DgProductos.CurrentRow.Cells(0).Value))
+
+                Dim da As New SqlClient.SqlDataAdapter(cmd)
+                Dim dt As New DataTable
+
+                da.Fill(dt)
+                Dim row As DataRow = dt.Rows(0)
+                TxIdProducto.Text = CStr(row("idproducto"))
+                TxProducto.Text = CStr(row("nombre"))
 
             Catch ex As Exception
-
+            Finally
+                cnn.Close()
+                CargarData()
             End Try
         End If
 

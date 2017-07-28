@@ -150,6 +150,7 @@ Partial Class PRODUCTOS
         Me.Controls.Add(Me.TxIdProducto)
         Me.Controls.Add(Me.TxProducto)
         Me.Controls.Add(Me.ToolStrip1)
+        Me.MinimumSize = New System.Drawing.Size(548, 431)
         Me.Name = "PRODUCTOS"
         Me.Text = "PRODUCTOS"
         Me.ToolStrip1.ResumeLayout(False)
