@@ -137,6 +137,11 @@ Used to sort self-referenced table's rows
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Chiles.My.Resources.Resources.Consultar">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Chiles.My.Resources.Resources.Eliminar">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.

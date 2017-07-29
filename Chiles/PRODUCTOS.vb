@@ -82,7 +82,6 @@ Public Class PRODUCTOS
             Catch ex As Exception
             Finally
                 cnn.Close()
-                CargarData()
             End Try
         End If
 

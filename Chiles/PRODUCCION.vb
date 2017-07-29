@@ -63,6 +63,14 @@ Public Class Produccion
         cnn.Close()
     End Sub
     Private Sub CapturaBotes(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxCaptura.KeyPress
+        If InStr(1, "0123456789." & Chr(8), e.KeyChar) = 0 Then
+            e.Handled = True
+            e.KeyChar = CChar("")
+            e.KeyChar = ChrW(Keys.Enter)
+            CambioControlPesoBruto(sender, e)
+        End If
+    End Sub
+    Private Sub CambioControlPesoBruto(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = ChrW(Keys.Enter) Then
             If TxCaptura.Text = "" Then
                 MessageBox.Show("Campo de captura vacio.")
@@ -89,5 +97,8 @@ Public Class Produccion
                 End Try
             End If
         End If
+    End Sub
+    Private Sub TsNuevo_Click(sender As Object, e As EventArgs) Handles TsNuevo.Click
+        TxIdProduccion.Text = ""
     End Sub
 End Class
