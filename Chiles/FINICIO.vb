@@ -65,4 +65,8 @@ Public Class FInicio
     Private Sub EstablecerPrecioDiarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EstablecerPrecioDiarioToolStripMenuItem.Click
         Produccion.ShowDialog()
     End Sub
+
+    Private Sub LiquidacionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LiquidacionesToolStripMenuItem.Click
+        LIQUIDACIONES.ShowDialog()
+    End Sub
 End Class

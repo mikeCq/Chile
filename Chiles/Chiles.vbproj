@@ -13,6 +13,7 @@
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publicar\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,7 +26,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -87,12 +87,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChilesDBData.Designer.vb">
+    <Compile Include="ChilesDBDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ChilesDBData.xsd</DependentUpon>
+      <DependentUpon>ChilesDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Conexion.vb" />
+    <Compile Include="ConsultaLiquidaciones.Designer.vb">
+      <DependentUpon>ConsultaLiquidaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaLiquidaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CONSULTAPRODUCCION.Designer.vb">
       <DependentUpon>CONSULTAPRODUCCION.vb</DependentUpon>
     </Compile>
@@ -104,6 +110,12 @@
     </Compile>
     <Compile Include="FINICIO.Designer.vb">
       <DependentUpon>FINICIO.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LIQUIDACIONES.Designer.vb">
+      <DependentUpon>LIQUIDACIONES.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LIQUIDACIONES.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -136,11 +148,17 @@
     <Compile Include="VarGlob.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ConsultaLiquidaciones.resx">
+      <DependentUpon>ConsultaLiquidaciones.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CONSULTAPRODUCCION.resx">
       <DependentUpon>CONSULTAPRODUCCION.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FINICIO.resx">
       <DependentUpon>FINICIO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LIQUIDACIONES.resx">
+      <DependentUpon>LIQUIDACIONES.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -156,16 +174,16 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ChilesDBData.xsc">
-      <DependentUpon>ChilesDBData.xsd</DependentUpon>
+    <None Include="ChilesDBDataSet.xsc">
+      <DependentUpon>ChilesDBDataSet.xsd</DependentUpon>
     </None>
-    <None Include="ChilesDBData.xsd">
+    <None Include="ChilesDBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ChilesDBData.Designer.vb</LastGenOutput>
+      <LastGenOutput>ChilesDBDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="ChilesDBData.xss">
-      <DependentUpon>ChilesDBData.xsd</DependentUpon>
+    <None Include="ChilesDBDataSet.xss">
+      <DependentUpon>ChilesDBDataSet.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -188,6 +206,18 @@
     </Content>
     <Content Include="Iconos\Actualizar.ico" />
     <Content Include="Iconos\Black Icon Package Icon 36.ico" />
+    <Content Include="Iconos\Imprimir.ico" />
+    <Content Include="Scripts\Procedures\dbo.sp_EliProducto.sql" />
+    <Content Include="Scripts\Procedures\dbo.sp_InsBotes.sql" />
+    <Content Include="Scripts\Procedures\dbo.sp_InsProduccion.sql" />
+    <Content Include="Scripts\Procedures\dbo.sp_InsProducto.sql" />
+    <Content Include="Scripts\Procedures\dbo.Sp_LlenaDgBotes.sql" />
+    <Content Include="Scripts\Procedures\dbo.sp_LLenaDgBusquedaProduccion.sql" />
+    <Content Include="Scripts\Procedures\dbo.sp_LlenaDgProductos.sql" />
+    <Content Include="Scripts\Procedures\dbo.sp_selProducto.sql" />
+    <Content Include="Scripts\Tablas\dbo.Botes.sql" />
+    <Content Include="Scripts\Tablas\dbo.Produccion.sql" />
+    <Content Include="Scripts\Tablas\dbo.Productos.sql" />
     <None Include="Iconos\Consultar.ico" />
     <Content Include="Iconos\Eliminar.ico" />
     <Content Include="Iconos\Guardar.ico" />

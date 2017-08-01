@@ -30,10 +30,11 @@ Partial Class FInicio
         Me.EstablecerPrecioDiarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UtilidadesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ChilesDBData = New Chiles.ChilesDBData()
+        Me.ChilesDBData = New Chiles.ChilesDBDataSet()
         Me.ProduccionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ProduccionTableAdapter = New Chiles.ChilesDBDataTableAdapters.ProduccionTableAdapter()
-        Me.TableAdapterManager = New Chiles.ChilesDBDataTableAdapters.TableAdapterManager()
+        Me.ProduccionTableAdapter = New Chiles.ChilesDBDataSetTableAdapters.ProduccionTableAdapter()
+        Me.TableAdapterManager = New Chiles.ChilesDBDataSetTableAdapters.TableAdapterManager()
+        Me.LiquidacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.ChilesDBData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProduccionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,7 +64,7 @@ Partial Class FInicio
         '
         'ProduccionToolStripMenuItem
         '
-        Me.ProduccionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EstablecerPrecioDiarioToolStripMenuItem})
+        Me.ProduccionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EstablecerPrecioDiarioToolStripMenuItem, Me.LiquidacionesToolStripMenuItem})
         Me.ProduccionToolStripMenuItem.Name = "ProduccionToolStripMenuItem"
         Me.ProduccionToolStripMenuItem.Size = New System.Drawing.Size(66, 20)
         Me.ProduccionToolStripMenuItem.Text = "Procesos"
@@ -104,9 +105,16 @@ Partial Class FInicio
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BotesTableAdapter = Nothing
         Me.TableAdapterManager.ProduccionTableAdapter = Me.ProduccionTableAdapter
         Me.TableAdapterManager.ProductosTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = Chiles.ChilesDBDataTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UpdateOrder = Chiles.ChilesDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'LiquidacionesToolStripMenuItem
+        '
+        Me.LiquidacionesToolStripMenuItem.Name = "LiquidacionesToolStripMenuItem"
+        Me.LiquidacionesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LiquidacionesToolStripMenuItem.Text = "Liquidaciones"
         '
         'FInicio
         '
@@ -128,10 +136,10 @@ Partial Class FInicio
 
     End Sub
 
-    Friend WithEvents ChilesDBData As ChilesDBData
+    Friend WithEvents ChilesDBData As ChilesDBDataSet
     Friend WithEvents ProduccionBindingSource As BindingSource
-    Friend WithEvents ProduccionTableAdapter As ChilesDBDataTableAdapters.ProduccionTableAdapter
-    Friend WithEvents TableAdapterManager As ChilesDBDataTableAdapters.TableAdapterManager
+    Friend WithEvents ProduccionTableAdapter As ChilesDBDataSetTableAdapters.ProduccionTableAdapter
+    Friend WithEvents TableAdapterManager As ChilesDBDataSetTableAdapters.TableAdapterManager
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents ProduccionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EstablecerPrecioDiarioToolStripMenuItem As ToolStripMenuItem
@@ -139,4 +147,5 @@ Partial Class FInicio
     Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CatalogosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ProductosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LiquidacionesToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -1,28 +1,18 @@
-C:\Users\MSISTEMAS\Documents\Visual Studio 2015\Projects\Chiles\Chiles\bin\Debug\ChilesDB.mdf
-C:\Users\MSISTEMAS\Documents\Visual Studio 2015\Projects\Chiles\Chiles\bin\Debug\ChilesDB_log.ldf
-C:\Users\MSISTEMAS\Documents\Visual Studio 2015\Projects\Chiles\Chiles\bin\Debug\Chiles.exe.config
-C:\Users\MSISTEMAS\Documents\Visual Studio 2015\Projects\Chiles\Chiles\bin\Debug\Chiles.exe
-C:\Users\MSISTEMAS\Documents\Visual Studio 2015\Projects\Chiles\Chiles\bin\Debug\Chiles.pdb
-C:\Users\MSISTEMAS\Documents\Visual Studio 2015\Projects\Chiles\Chiles\bin\Debug\Chiles.xml
-C:\Users\MSISTEMAS\Documents\Visual Studio 2015\Projects\Chiles\Chiles\obj\Debug\Chiles.vbprojResolveAssemblyReference.cache
-C:\Users\MSISTEMAS\Documents\Visual Studio 2015\Projects\Chiles\Chiles\obj\Debug\Chiles.FInicio.resources
-C:\Users\MSISTEMAS\Documents\Visual Studio 2015\Projects\Chiles\Chiles\obj\Debug\Chiles.Resources.resources
-C:\Users\MSISTEMAS\Documents\Visual Studio 2015\Projects\Chiles\Chiles\obj\Debug\Chiles.vbproj.GenerateResource.Cache
-C:\Users\MSISTEMAS\Documents\Visual Studio 2015\Projects\Chiles\Chiles\obj\Debug\Chiles.exe
-C:\Users\MSISTEMAS\Documents\Visual Studio 2015\Projects\Chiles\Chiles\obj\Debug\Chiles.xml
-C:\Users\MSISTEMAS\Documents\Visual Studio 2015\Projects\Chiles\Chiles\obj\Debug\Chiles.pdb
-C:\Users\MSISTEMAS\Desktop\Desarrollo\Chiles\Chiles\bin\Debug\ChilesDB.mdf
-C:\Users\MSISTEMAS\Desktop\Desarrollo\Chiles\Chiles\bin\Debug\ChilesDB_log.ldf
-C:\Users\MSISTEMAS\Desktop\Desarrollo\Chiles\Chiles\bin\Debug\Chiles.exe.config
-C:\Users\MSISTEMAS\Desktop\Desarrollo\Chiles\Chiles\bin\Debug\Chiles.exe
-C:\Users\MSISTEMAS\Desktop\Desarrollo\Chiles\Chiles\bin\Debug\Chiles.pdb
-C:\Users\MSISTEMAS\Desktop\Desarrollo\Chiles\Chiles\bin\Debug\Chiles.xml
-C:\Users\MSISTEMAS\Desktop\Desarrollo\Chiles\Chiles\obj\Debug\Chiles.FInicio.resources
-C:\Users\MSISTEMAS\Desktop\Desarrollo\Chiles\Chiles\obj\Debug\Chiles.Resources.resources
-C:\Users\MSISTEMAS\Desktop\Desarrollo\Chiles\Chiles\obj\Debug\Chiles.Produccion.resources
-C:\Users\MSISTEMAS\Desktop\Desarrollo\Chiles\Chiles\obj\Debug\Chiles.Productos.resources
-C:\Users\MSISTEMAS\Desktop\Desarrollo\Chiles\Chiles\obj\Debug\Chiles.vbproj.GenerateResource.Cache
-C:\Users\MSISTEMAS\Desktop\Desarrollo\Chiles\Chiles\obj\Debug\Chiles.exe
-C:\Users\MSISTEMAS\Desktop\Desarrollo\Chiles\Chiles\obj\Debug\Chiles.xml
-C:\Users\MSISTEMAS\Desktop\Desarrollo\Chiles\Chiles\obj\Debug\Chiles.pdb
-C:\Users\MSISTEMAS\Desktop\Desarrollo\Chiles\Chiles\obj\Debug\Chiles.vbprojResolveAssemblyReference.cache
+C:\Users\Miguel\Desktop\DESARROLLO\Chile\Chiles\bin\Debug\Chiles.exe.config
+C:\Users\Miguel\Desktop\DESARROLLO\Chile\Chiles\obj\Debug\Chiles.vbprojResolveAssemblyReference.cache
+C:\Users\Miguel\Desktop\DESARROLLO\Chile\Chiles\obj\Debug\Chiles.CONSULTAPRODUCCION.resources
+C:\Users\Miguel\Desktop\DESARROLLO\Chile\Chiles\obj\Debug\Chiles.FInicio.resources
+C:\Users\Miguel\Desktop\DESARROLLO\Chile\Chiles\obj\Debug\Chiles.Resources.resources
+C:\Users\Miguel\Desktop\DESARROLLO\Chile\Chiles\obj\Debug\Chiles.Produccion.resources
+C:\Users\Miguel\Desktop\DESARROLLO\Chile\Chiles\obj\Debug\Chiles.PRODUCTOS.resources
+C:\Users\Miguel\Desktop\DESARROLLO\Chile\Chiles\obj\Debug\Chiles.vbproj.GenerateResource.Cache
+C:\Users\Miguel\Desktop\DESARROLLO\Chile\Chiles\bin\Debug\ChilesDB.mdf
+C:\Users\Miguel\Desktop\DESARROLLO\Chile\Chiles\bin\Debug\ChilesDB_log.ldf
+C:\Users\Miguel\Desktop\DESARROLLO\Chile\Chiles\bin\Debug\Chiles.exe
+C:\Users\Miguel\Desktop\DESARROLLO\Chile\Chiles\bin\Debug\Chiles.pdb
+C:\Users\Miguel\Desktop\DESARROLLO\Chile\Chiles\bin\Debug\Chiles.xml
+C:\Users\Miguel\Desktop\DESARROLLO\Chile\Chiles\obj\Debug\Chiles.exe
+C:\Users\Miguel\Desktop\DESARROLLO\Chile\Chiles\obj\Debug\Chiles.xml
+C:\Users\Miguel\Desktop\DESARROLLO\Chile\Chiles\obj\Debug\Chiles.pdb
+C:\Users\Miguel\Desktop\DESARROLLO\Chile\Chiles\obj\Debug\Chiles.LIQUIDACIONES.resources
+C:\Users\Miguel\Desktop\DESARROLLO\Chile\Chiles\obj\Debug\Chiles.ConsultaLiquidaciones.resources

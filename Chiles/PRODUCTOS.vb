@@ -24,6 +24,7 @@ Public Class PRODUCTOS
             cmd.Parameters("@IdProducto").Direction = ParameterDirection.InputOutput
 
             cmd.ExecuteNonQuery()
+
             TxIdProducto.Text = cmd.Parameters("@IdProducto").Value
 
         Catch ex As Exception

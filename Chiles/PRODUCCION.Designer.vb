@@ -33,16 +33,23 @@ Partial Class Produccion
         Me.BtCerrar = New System.Windows.Forms.Button()
         Me.TxIdProduccion = New System.Windows.Forms.TextBox()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.TsNuevo = New System.Windows.Forms.ToolStripLabel()
+        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripSeparator()
         Me.TsGuardar = New System.Windows.Forms.ToolStripButton()
-        Me.TsEliminar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.TsConsultar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.TsEliminar = New System.Windows.Forms.ToolStripButton()
+        Me.GbAbrir = New System.Windows.Forms.GroupBox()
+        Me.CbEstatus = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.GbCaptura = New System.Windows.Forms.GroupBox()
+        Me.DtFecha = New System.Windows.Forms.DateTimePicker()
         CType(Me.DgBoteIngresado, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NuPrecio, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
+        Me.GbAbrir.SuspendLayout()
+        Me.GbCaptura.SuspendLayout()
         Me.SuspendLayout()
         '
         'DgBoteIngresado
@@ -68,24 +75,24 @@ Partial Class Produccion
         'NuPrecio
         '
         Me.NuPrecio.DecimalPlaces = 2
-        Me.NuPrecio.Location = New System.Drawing.Point(61, 76)
+        Me.NuPrecio.Location = New System.Drawing.Point(61, 66)
         Me.NuPrecio.Maximum = New Decimal(New Integer() {999999, 0, 0, 0})
         Me.NuPrecio.Name = "NuPrecio"
         Me.NuPrecio.Size = New System.Drawing.Size(120, 20)
-        Me.NuPrecio.TabIndex = 1
+        Me.NuPrecio.TabIndex = 0
         Me.NuPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'CbProducto
         '
         Me.CbProducto.FormattingEnabled = True
-        Me.CbProducto.Location = New System.Drawing.Point(289, 75)
+        Me.CbProducto.Location = New System.Drawing.Point(289, 66)
         Me.CbProducto.Name = "CbProducto"
         Me.CbProducto.Size = New System.Drawing.Size(125, 21)
-        Me.CbProducto.TabIndex = 2
+        Me.CbProducto.TabIndex = 1
         '
         'BtIniciar
         '
-        Me.BtIniciar.Location = New System.Drawing.Point(699, 64)
+        Me.BtIniciar.Location = New System.Drawing.Point(699, 54)
         Me.BtIniciar.Name = "BtIniciar"
         Me.BtIniciar.Size = New System.Drawing.Size(114, 40)
         Me.BtIniciar.TabIndex = 3
@@ -95,7 +102,7 @@ Partial Class Produccion
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(16, 78)
+        Me.Label1.Location = New System.Drawing.Point(16, 69)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(43, 13)
         Me.Label1.TabIndex = 0
@@ -104,7 +111,7 @@ Partial Class Produccion
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(227, 78)
+        Me.Label2.Location = New System.Drawing.Point(227, 69)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(56, 13)
         Me.Label2.TabIndex = 0
@@ -113,16 +120,16 @@ Partial Class Produccion
         'TxCaptura
         '
         Me.TxCaptura.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxCaptura.Location = New System.Drawing.Point(13, 257)
+        Me.TxCaptura.Location = New System.Drawing.Point(19, 77)
         Me.TxCaptura.Name = "TxCaptura"
         Me.TxCaptura.Size = New System.Drawing.Size(279, 62)
-        Me.TxCaptura.TabIndex = 4
+        Me.TxCaptura.TabIndex = 0
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
-        Me.Label3.Location = New System.Drawing.Point(13, 223)
+        Me.Label3.Location = New System.Drawing.Point(19, 43)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(279, 31)
         Me.Label3.TabIndex = 0
@@ -130,16 +137,16 @@ Partial Class Produccion
         '
         'BtCerrar
         '
-        Me.BtCerrar.Location = New System.Drawing.Point(699, 279)
+        Me.BtCerrar.Location = New System.Drawing.Point(705, 99)
         Me.BtCerrar.Name = "BtCerrar"
         Me.BtCerrar.Size = New System.Drawing.Size(114, 40)
-        Me.BtCerrar.TabIndex = 5
+        Me.BtCerrar.TabIndex = 1
         Me.BtCerrar.Text = "Cerrar Produccion"
         Me.BtCerrar.UseVisualStyleBackColor = True
         '
         'TxIdProduccion
         '
-        Me.TxIdProduccion.Location = New System.Drawing.Point(61, 40)
+        Me.TxIdProduccion.Location = New System.Drawing.Point(61, 30)
         Me.TxIdProduccion.Name = "TxIdProduccion"
         Me.TxIdProduccion.Size = New System.Drawing.Size(120, 20)
         Me.TxIdProduccion.TabIndex = 0
@@ -154,21 +161,6 @@ Partial Class Produccion
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'ToolStripButton2
-        '
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(6, 25)
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 25)
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
-        '
         'TsNuevo
         '
         Me.TsNuevo.Image = Global.Chiles.My.Resources.Resources.Nuevo
@@ -178,6 +170,11 @@ Partial Class Produccion
         Me.TsNuevo.Text = "Nuevo"
         Me.TsNuevo.ToolTipText = "Nuevo"
         '
+        'ToolStripButton2
+        '
+        Me.ToolStripButton2.Name = "ToolStripButton2"
+        Me.ToolStripButton2.Size = New System.Drawing.Size(6, 25)
+        '
         'TsGuardar
         '
         Me.TsGuardar.Image = Global.Chiles.My.Resources.Resources.Guardar
@@ -186,6 +183,24 @@ Partial Class Produccion
         Me.TsGuardar.Size = New System.Drawing.Size(126, 22)
         Me.TsGuardar.Text = "Guardar/Actualizar"
         Me.TsGuardar.ToolTipText = "Guardar/Actualizar"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 25)
+        '
+        'TsConsultar
+        '
+        Me.TsConsultar.Image = Global.Chiles.My.Resources.Resources.Consultar
+        Me.TsConsultar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.TsConsultar.Name = "TsConsultar"
+        Me.TsConsultar.Size = New System.Drawing.Size(138, 22)
+        Me.TsConsultar.Text = "Consulta Produccion"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
         '
         'TsEliminar
         '
@@ -197,29 +212,69 @@ Partial Class Produccion
         Me.TsEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.TsEliminar.ToolTipText = "Eliminar"
         '
-        'TsConsultar
+        'GbAbrir
         '
-        Me.TsConsultar.Image = Global.Chiles.My.Resources.Resources.Consultar
-        Me.TsConsultar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.TsConsultar.Name = "TsConsultar"
-        Me.TsConsultar.Size = New System.Drawing.Size(138, 22)
-        Me.TsConsultar.Text = "Consulta Produccion"
+        Me.GbAbrir.Controls.Add(Me.CbEstatus)
+        Me.GbAbrir.Controls.Add(Me.NuPrecio)
+        Me.GbAbrir.Controls.Add(Me.CbProducto)
+        Me.GbAbrir.Controls.Add(Me.TxIdProduccion)
+        Me.GbAbrir.Controls.Add(Me.BtIniciar)
+        Me.GbAbrir.Controls.Add(Me.Label1)
+        Me.GbAbrir.Controls.Add(Me.Label4)
+        Me.GbAbrir.Controls.Add(Me.Label2)
+        Me.GbAbrir.Location = New System.Drawing.Point(0, 28)
+        Me.GbAbrir.Name = "GbAbrir"
+        Me.GbAbrir.Size = New System.Drawing.Size(825, 140)
+        Me.GbAbrir.TabIndex = 1
+        Me.GbAbrir.TabStop = False
+        '
+        'CbEstatus
+        '
+        Me.CbEstatus.Enabled = False
+        Me.CbEstatus.FormattingEnabled = True
+        Me.CbEstatus.Location = New System.Drawing.Point(534, 65)
+        Me.CbEstatus.Name = "CbEstatus"
+        Me.CbEstatus.Size = New System.Drawing.Size(121, 21)
+        Me.CbEstatus.TabIndex = 2
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(480, 68)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(48, 13)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = "Estatus :"
+        '
+        'GbCaptura
+        '
+        Me.GbCaptura.Controls.Add(Me.BtCerrar)
+        Me.GbCaptura.Controls.Add(Me.Label3)
+        Me.GbCaptura.Controls.Add(Me.TxCaptura)
+        Me.GbCaptura.Location = New System.Drawing.Point(0, 174)
+        Me.GbCaptura.Name = "GbCaptura"
+        Me.GbCaptura.Size = New System.Drawing.Size(825, 145)
+        Me.GbCaptura.TabIndex = 2
+        Me.GbCaptura.TabStop = False
+        '
+        'DtFecha
+        '
+        Me.DtFecha.Enabled = False
+        Me.DtFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DtFecha.Location = New System.Drawing.Point(699, 5)
+        Me.DtFecha.Name = "DtFecha"
+        Me.DtFecha.Size = New System.Drawing.Size(114, 20)
+        Me.DtFecha.TabIndex = 4
         '
         'Produccion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(825, 587)
+        Me.Controls.Add(Me.DtFecha)
+        Me.Controls.Add(Me.GbCaptura)
+        Me.Controls.Add(Me.GbAbrir)
         Me.Controls.Add(Me.ToolStrip1)
-        Me.Controls.Add(Me.TxIdProduccion)
-        Me.Controls.Add(Me.TxCaptura)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.BtCerrar)
-        Me.Controls.Add(Me.BtIniciar)
-        Me.Controls.Add(Me.CbProducto)
-        Me.Controls.Add(Me.NuPrecio)
         Me.Controls.Add(Me.DgBoteIngresado)
         Me.MinimumSize = New System.Drawing.Size(841, 626)
         Me.Name = "Produccion"
@@ -229,6 +284,10 @@ Partial Class Produccion
         CType(Me.NuPrecio, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        Me.GbAbrir.ResumeLayout(False)
+        Me.GbAbrir.PerformLayout()
+        Me.GbCaptura.ResumeLayout(False)
+        Me.GbCaptura.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -252,4 +311,9 @@ Partial Class Produccion
     Friend WithEvents TsEliminar As ToolStripButton
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents TsConsultar As ToolStripButton
+    Friend WithEvents GbAbrir As GroupBox
+    Friend WithEvents GbCaptura As GroupBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents CbEstatus As ComboBox
+    Friend WithEvents DtFecha As DateTimePicker
 End Class
