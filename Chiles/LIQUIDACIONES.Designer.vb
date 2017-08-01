@@ -50,6 +50,8 @@ Partial Class LIQUIDACIONES
         Me.DgBotesIngresados = New System.Windows.Forms.DataGridView()
         Me.DgProducciones = New System.Windows.Forms.DataGridView()
         Me.BtAgregar = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TbTotal = New System.Windows.Forms.TextBox()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.NuPrecio, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GbLiquidacion.SuspendLayout()
@@ -244,14 +246,14 @@ Partial Class LIQUIDACIONES
         Me.DgBotesIngresados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.DgBotesIngresados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgBotesIngresados.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.DgBotesIngresados.Location = New System.Drawing.Point(0, 380)
+        Me.DgBotesIngresados.Location = New System.Drawing.Point(0, 323)
         Me.DgBotesIngresados.MultiSelect = False
         Me.DgBotesIngresados.Name = "DgBotesIngresados"
         Me.DgBotesIngresados.ReadOnly = True
         Me.DgBotesIngresados.RowHeadersVisible = False
         Me.DgBotesIngresados.RowHeadersWidth = 40
         Me.DgBotesIngresados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgBotesIngresados.Size = New System.Drawing.Size(1041, 276)
+        Me.DgBotesIngresados.Size = New System.Drawing.Size(1041, 333)
         Me.DgBotesIngresados.TabIndex = 11
         '
         'DgProducciones
@@ -291,18 +293,37 @@ Partial Class LIQUIDACIONES
         '
         'BtAgregar
         '
-        Me.BtAgregar.Location = New System.Drawing.Point(917, 273)
+        Me.BtAgregar.Location = New System.Drawing.Point(0, 273)
         Me.BtAgregar.Name = "BtAgregar"
         Me.BtAgregar.Size = New System.Drawing.Size(124, 44)
         Me.BtAgregar.TabIndex = 14
         Me.BtAgregar.Text = "Agregar Botes"
         Me.BtAgregar.UseVisualStyleBackColor = True
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(810, 285)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(113, 13)
+        Me.Label7.TabIndex = 15
+        Me.Label7.Text = "TOTAL DE BOTES"
+        '
+        'TbTotal
+        '
+        Me.TbTotal.Location = New System.Drawing.Point(929, 282)
+        Me.TbTotal.Name = "TbTotal"
+        Me.TbTotal.Size = New System.Drawing.Size(112, 20)
+        Me.TbTotal.TabIndex = 16
+        '
         'LIQUIDACIONES
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1041, 659)
+        Me.Controls.Add(Me.TbTotal)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.BtAgregar)
         Me.Controls.Add(Me.DgProducciones)
         Me.Controls.Add(Me.DgBotesIngresados)
@@ -348,4 +369,6 @@ Partial Class LIQUIDACIONES
     Friend WithEvents DgBotesIngresados As DataGridView
     Friend WithEvents DgProducciones As DataGridView
     Friend WithEvents BtAgregar As Button
+    Friend WithEvents Label7 As Label
+    Friend WithEvents TbTotal As TextBox
 End Class

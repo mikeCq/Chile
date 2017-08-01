@@ -16,3 +16,21 @@ C:\Users\Miguel\Desktop\DESARROLLO\Chile\Chiles\obj\Debug\Chiles.xml
 C:\Users\Miguel\Desktop\DESARROLLO\Chile\Chiles\obj\Debug\Chiles.pdb
 C:\Users\Miguel\Desktop\DESARROLLO\Chile\Chiles\obj\Debug\Chiles.LIQUIDACIONES.resources
 C:\Users\Miguel\Desktop\DESARROLLO\Chile\Chiles\obj\Debug\Chiles.ConsultaLiquidaciones.resources
+C:\Users\Oscar Merino\Desktop\Chiles\Chile\Chiles\bin\Debug\ChilesDB.mdf
+C:\Users\Oscar Merino\Desktop\Chiles\Chile\Chiles\bin\Debug\ChilesDB_log.ldf
+C:\Users\Oscar Merino\Desktop\Chiles\Chile\Chiles\bin\Debug\Chiles.exe.config
+C:\Users\Oscar Merino\Desktop\Chiles\Chile\Chiles\bin\Debug\Chiles.exe
+C:\Users\Oscar Merino\Desktop\Chiles\Chile\Chiles\bin\Debug\Chiles.pdb
+C:\Users\Oscar Merino\Desktop\Chiles\Chile\Chiles\bin\Debug\Chiles.xml
+C:\Users\Oscar Merino\Desktop\Chiles\Chile\Chiles\obj\Debug\Chiles.ConsultaLiquidaciones.resources
+C:\Users\Oscar Merino\Desktop\Chiles\Chile\Chiles\obj\Debug\Chiles.CONSULTAPRODUCCION.resources
+C:\Users\Oscar Merino\Desktop\Chiles\Chile\Chiles\obj\Debug\Chiles.FInicio.resources
+C:\Users\Oscar Merino\Desktop\Chiles\Chile\Chiles\obj\Debug\Chiles.LIQUIDACIONES.resources
+C:\Users\Oscar Merino\Desktop\Chiles\Chile\Chiles\obj\Debug\Chiles.Resources.resources
+C:\Users\Oscar Merino\Desktop\Chiles\Chile\Chiles\obj\Debug\Chiles.Produccion.resources
+C:\Users\Oscar Merino\Desktop\Chiles\Chile\Chiles\obj\Debug\Chiles.PRODUCTOS.resources
+C:\Users\Oscar Merino\Desktop\Chiles\Chile\Chiles\obj\Debug\Chiles.vbproj.GenerateResource.Cache
+C:\Users\Oscar Merino\Desktop\Chiles\Chile\Chiles\obj\Debug\Chiles.exe
+C:\Users\Oscar Merino\Desktop\Chiles\Chile\Chiles\obj\Debug\Chiles.xml
+C:\Users\Oscar Merino\Desktop\Chiles\Chile\Chiles\obj\Debug\Chiles.pdb
+C:\Users\Oscar Merino\Desktop\Chiles\Chile\Chiles\obj\Debug\Chiles.vbprojResolveAssemblyReference.cache

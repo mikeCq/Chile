@@ -3,6 +3,7 @@ Imports System.Data.SqlClient
 Public Class LIQUIDACIONES
     Dim cnn As New SqlConnection(VarGlob.ConexionPrincipal)
     Dim cmd As SqlCommand
+    Dim DtBotes As New DataTable
     Private Sub LIQUIDACIONES_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Nuevo()
         llenaCombos()
@@ -13,14 +14,10 @@ Public Class LIQUIDACIONES
     End Sub
     Private Sub llenaDg()
         Dim cmd As New SqlCommand("sp_LlenarDgProduccionesLiquidacion", cnn)
-
         cmd.CommandType = CommandType.StoredProcedure
-
         'cmd.Parameters.Add(New SqlClient.SqlParameter("@IdProduccion", codigoSeleccionado))
-
         Dim da As New SqlClient.SqlDataAdapter(cmd)
         Dim dt As New DataTable
-
         da.Fill(dt)
         DgProducciones.DataSource = dt
         FormatoDgProducciones()
@@ -151,13 +148,13 @@ Public Class LIQUIDACIONES
     Private Sub Agregar()
         DgBotesIngresados.Columns.Clear()
         DgBotesIngresados.DataSource = Nothing
+        DtBotes.Clear()
+        Dim Total As Integer = 0
         'propiedadesDataProdSelec()
         Dim Contador As Integer
-
         For Contador = 0 To DgProducciones.RowCount - 1
             If DgProducciones.Rows(Contador).Cells("ChCol").Value = True Then
                 Try
-
                     ' Creo el DataTable que llenaremos con Fill
                     cnn.Open()
                     Dim cmd As New SqlCommand("sp_LlenaDgBotes", cnn)
@@ -166,37 +163,58 @@ Public Class LIQUIDACIONES
                     ' Llenamos el DataTable donde traemos el producto
                     Dim da As New SqlDataAdapter(cmd)
                     Dim dt As New DataTable
-                    Dim DtBotes As New DataTable
-
                     da.Fill(DtBotes)
-                    ' Si el DT posee más de 0 filas
-                    If DgBotesIngresados.Rows.Count <> 0 Then
-                        ' Porcion de Código para formatear el DataTable donde 
-                        ' almacenaremos todos los productos.
-                        If dt.Rows.Count = 0 Then
-                            ' Copio la estructura (columnas), del resultado obtenido
-                            dt = DtBotes.Clone
-                        End If
-                        ' Importo la Fila obtenida
-                        dt.ImportRow(DtBotes.Rows(0))
-
-                    End If
-                    DgBotesIngresados.DataSource = DtBotes
-
+                    Total = Total + DgProducciones.Rows(Contador).Cells("cantidadbotes").Value
                 Catch ex As Exception
                     MsgBox("Problemas al conectar con al base de datos ")
                 Finally
                     cnn.Close()
                 End Try
-
-
                 'DgSeleccionLiquidaciones.Rows.Add(DgEntradasLiq.Rows(Contador).Cells("IdInventario").Value.ToString(), DgEntradasLiq.Rows(Contador).Cells("numeroBoleta").Value, DgEntradasLiq.Rows(Contador).Cells("Id_cliente").Value.ToString(), DgEntradasLiq.Rows(Contador).Cells("Fecha_Pesaje").Value, DgEntradasLiq.Rows(Contador).Cells("grupoGrano").Value.ToString(), DgEntradasLiq.Rows(Contador).Cells("Neto").Value, DgEntradasLiq.Rows(Contador).Cells("Deducciones").Value, DgEntradasLiq.Rows(Contador).Cells("Total").Value)
-
             End If
         Next Contador
-
+        DgBotesIngresados.DataSource = DtBotes
+        TbTotal.Text = Total
     End Sub
     Private Sub consultaproducto(ByVal bb As String, ByVal dgv As DataGridView)
 
+    End Sub
+    Private Sub TsGuardar_Click(sender As Object, e As EventArgs) Handles TsGuardar.Click
+        Dim Contador As Integer
+        For Contador = 0 To DgProducciones.RowCount - 1
+            If DgProducciones.Rows(Contador).Cells("ChCol").Value = True Then
+                Try
+                    'Cambiar el estado
+                    cnn.Open()
+                    cmd = New SqlCommand("sp_InsProduccion", cnn)
+                    cmd.CommandType = CommandType.StoredProcedure
+                    cmd.Parameters.Add(New SqlParameter("@IdProduccion", DgProducciones.Rows(Contador).Cells("IdProduccion").Value))
+                    cmd.Parameters.Add(New SqlParameter("@Fecha", DgProducciones.Rows(Contador).Cells("fecha").Value))
+                    cmd.Parameters.Add(New SqlParameter("@Precio", DgProducciones.Rows(Contador).Cells("precio").Value))
+                    cmd.Parameters.Add(New SqlParameter("@CantidadBotes", DgProducciones.Rows(Contador).Cells("cantidadbotes").Value))
+                    cmd.Parameters.Add(New SqlParameter("@SumaBotes", DgProducciones.Rows(Contador).Cells("sumabotes").Value))
+                    cmd.Parameters.Add(New SqlParameter("@Producto", DgProducciones.Rows(Contador).Cells("producto").Value))
+                    cmd.Parameters.Add(New SqlParameter("@IdEstatus", 3))
+                    cmd.ExecuteNonQuery()
+                    llenaDg()
+                Catch ex As Exception
+                    MsgBox("Problemas al conectar con al base de datos ")
+                Finally
+                    cnn.Close()
+                End Try
+            End If
+        Next Contador
+    End Sub
+    Private Sub DgProducciones_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgProducciones.CellContentClick
+        Dim Contador As Integer
+        For Contador = 0 To DgProducciones.RowCount - 1
+            If DgProducciones.Rows(Contador).Selected Then
+                If DgProducciones.Rows(Contador).Cells("ChCol").Value = False Then
+                    DgProducciones.Rows(Contador).Cells("ChCol").Value = True
+                ElseIf DgProducciones.Rows(Contador).Cells("ChCol").Value = True Then
+                    DgProducciones.Rows(Contador).Cells("ChCol").Value = False
+                End If
+            End If
+        Next Contador
     End Sub
 End Class
