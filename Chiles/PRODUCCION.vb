@@ -64,12 +64,13 @@ Public Class Produccion
             MessageBox.Show("No puedes iniciar la produccion con campos vacios.", "Aviso")
         Else
             Try
+                TxNombreDia.Text = UCase(WeekdayName(Weekday(DtFecha.Value)))
                 cnn.Open()
                 cmd = New SqlCommand("sp_InsProduccion", cnn)
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.Add(New SqlParameter("@IdProduccion", 0))
                 cmd.Parameters.Add(New SqlParameter("@Fecha", DtFecha.Value))
-                cmd.Parameters.Add(New SqlParameter("@FechaLetra", DtFecha.Value.DayOfWeek))
+                cmd.Parameters.Add(New SqlParameter("@FechaLetra", TxNombreDia.Text))
                 cmd.Parameters.Add(New SqlParameter("@Precio", NuPrecio.Value))
                 cmd.Parameters.Add(New SqlParameter("@CantidadBotes", 0))
                 cmd.Parameters.Add(New SqlParameter("@SumaBotes", 0))

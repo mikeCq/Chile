@@ -38,6 +38,7 @@ Partial Class Produccion
         Me.TsGuardar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.TsEliminar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.TsConsultar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
@@ -46,7 +47,7 @@ Partial Class Produccion
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GbCaptura = New System.Windows.Forms.GroupBox()
         Me.DtFecha = New System.Windows.Forms.DateTimePicker()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.TxNombreDia = New System.Windows.Forms.TextBox()
         CType(Me.DgBoteIngresado, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NuPrecio, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
@@ -201,6 +202,11 @@ Partial Class Produccion
         Me.TsEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.TsEliminar.ToolTipText = "Eliminar"
         '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 25)
+        '
         'TsConsultar
         '
         Me.TsConsultar.Image = Global.Chiles.My.Resources.Resources.Consultar
@@ -226,6 +232,7 @@ Partial Class Produccion
         Me.GbAbrir.Controls.Add(Me.CbEstatus)
         Me.GbAbrir.Controls.Add(Me.NuPrecio)
         Me.GbAbrir.Controls.Add(Me.CbProducto)
+        Me.GbAbrir.Controls.Add(Me.TxNombreDia)
         Me.GbAbrir.Controls.Add(Me.TxIdProduccion)
         Me.GbAbrir.Controls.Add(Me.BtIniciar)
         Me.GbAbrir.Controls.Add(Me.Label1)
@@ -275,10 +282,13 @@ Partial Class Produccion
         Me.DtFecha.Size = New System.Drawing.Size(114, 20)
         Me.DtFecha.TabIndex = 4
         '
-        'ToolStripSeparator3
+        'TxNombreDia
         '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 25)
+        Me.TxNombreDia.Enabled = False
+        Me.TxNombreDia.Location = New System.Drawing.Point(699, 59)
+        Me.TxNombreDia.Name = "TxNombreDia"
+        Me.TxNombreDia.Size = New System.Drawing.Size(114, 20)
+        Me.TxNombreDia.TabIndex = 0
         '
         'Produccion
         '
@@ -332,4 +342,5 @@ Partial Class Produccion
     Friend WithEvents DtFecha As DateTimePicker
     Friend WithEvents ToolStripLabel1 As ToolStripLabel
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
+    Friend WithEvents TxNombreDia As TextBox
 End Class
