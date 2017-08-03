@@ -152,11 +152,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RptLiquidacionDetalle.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="RPT\RptLiquidacionTotal.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RptLiquidacionTotal.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="VarGlob.vb" />
   </ItemGroup>

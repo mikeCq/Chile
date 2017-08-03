@@ -69,6 +69,7 @@ Public Class Produccion
                 cmd.CommandType = CommandType.StoredProcedure
                 cmd.Parameters.Add(New SqlParameter("@IdProduccion", 0))
                 cmd.Parameters.Add(New SqlParameter("@Fecha", DtFecha.Value))
+                cmd.Parameters.Add(New SqlParameter("@FechaLetra", DtFecha.Value.DayOfWeek))
                 cmd.Parameters.Add(New SqlParameter("@Precio", NuPrecio.Value))
                 cmd.Parameters.Add(New SqlParameter("@CantidadBotes", 0))
                 cmd.Parameters.Add(New SqlParameter("@SumaBotes", 0))
@@ -205,6 +206,12 @@ Public Class Produccion
                     cmd.CommandType = CommandType.StoredProcedure
                     cmd.Parameters.Add(New SqlParameter("@IdProduccion", TxIdProduccion.Text))
                     cmd.Parameters.Add(New SqlParameter("@Fecha", DtFecha.Value))
+
+                    cmd.Parameters.Add(New SqlParameter("@FechaLetra", DtFecha.Value.Day))
+
+
+
+
                     cmd.Parameters.Add(New SqlParameter("@Precio", NuPrecio.Value))
                     cmd.Parameters.Add(New SqlParameter("@CantidadBotes", DgBoteIngresado.RowCount))
                     cmd.Parameters.Add(New SqlParameter("@SumaBotes", TotalPrecio))
@@ -245,5 +252,8 @@ Public Class Produccion
     End Sub
     Private Sub ToolStripLabel1_Click(sender As Object, e As EventArgs) Handles ToolStripLabel1.Click
         Close()
+    End Sub
+    Public Sub GenerarDia(ByVal Dia As Integer)
+
     End Sub
 End Class
