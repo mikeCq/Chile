@@ -61,10 +61,8 @@ Public Class Produccion
 
     Private Sub BtIniciar_Click(sender As Object, e As EventArgs) Handles BtIniciar.Click
         If NuPrecio.Value = 0 Or CbProducto.SelectedValue = Nothing Or CbProducto.Text = "" Then
-
             MessageBox.Show("No puedes iniciar la produccion con campos vacios.", "Aviso")
         Else
-
             Try
                 cnn.Open()
                 cmd = New SqlCommand("sp_InsProduccion", cnn)
@@ -76,7 +74,6 @@ Public Class Produccion
                 cmd.Parameters.Add(New SqlParameter("@SumaBotes", 0))
                 cmd.Parameters.Add(New SqlParameter("@Producto", CbProducto.Text))
                 cmd.Parameters.Add(New SqlParameter("@IdEstatus", CbEstatus.SelectedValue))
-
                 cmd.Parameters("@IdProduccion").Direction = ParameterDirection.InputOutput
                 cmd.Parameters("@IdEstatus").Direction = ParameterDirection.InputOutput
                 cmd.ExecuteNonQuery()
@@ -124,11 +121,8 @@ Public Class Produccion
                     cmd.Parameters.Add(New SqlParameter("@Empleado", TxCaptura.Text))
                     cmd.Parameters.Add(New SqlParameter("@Fecha", Now))
                     cmd.Parameters.Add(New SqlParameter("@IdProduccion", TxIdProduccion.Text))
-
                     'cmd.Parameters("@IdProduccion").Direction = ParameterDirection.InputOutput
-
                     cmd.ExecuteNonQuery()
-
                 Catch ex As Exception
                     MsgBox(ex.ToString)
                 Finally
@@ -159,23 +153,17 @@ Public Class Produccion
             Dim codigoSeleccionado As Object = ConsultaProduccion.CodigoProduccion
             If codigoSeleccionado <> Nothing Then
                 Dim cmd As New SqlCommand("sp_selProduccion", cnn)
-
                 cmd.CommandType = CommandType.StoredProcedure
-
                 cmd.Parameters.Add(New SqlClient.SqlParameter("@IdProduccion", codigoSeleccionado))
-
                 Dim da As New SqlClient.SqlDataAdapter(cmd)
                 Dim dt As New DataTable
-
                 da.Fill(dt)
-
                 Dim row As DataRow = dt.Rows(0)
                 TxIdProduccion.Text = row("IdProduccion")
                 DtFecha.Value = row("Fecha")
                 NuPrecio.Value = row("Precio")
                 CbProducto.Text = CStr(row("Producto"))
                 CbEstatus.SelectedValue = row("IdEstatus")
-
                 CargaBotes(TxIdProduccion.Text)
             End If
         Catch ex As Exception
@@ -202,14 +190,10 @@ Public Class Produccion
             MsgBox(ex.ToString)
         End Try
     End Sub
-    Private Function calculaBotesPrecio(ByVal cantidadBotes As Integer) As Integer
-
-    End Function
     Private Sub BtCerrar_Click(sender As Object, e As EventArgs) Handles BtCerrar.Click
         Dim opc As DialogResult = MessageBox.Show("¿Esta seguro de cerrar esta produccion, al hacerlo ya no podra agregar mas botes?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If opc = DialogResult.Yes Then
             If NuPrecio.Value = 0 Or CbProducto.SelectedValue = Nothing Or CbProducto.Text = "" Then
-
                 MessageBox.Show("No puedes iniciar la produccion con campos vacios.", "Aviso")
             Else
                 Dim TotalPrecio As Decimal
@@ -225,7 +209,6 @@ Public Class Produccion
                     cmd.Parameters.Add(New SqlParameter("@SumaBotes", TotalPrecio))
                     cmd.Parameters.Add(New SqlParameter("@Producto", CbProducto.Text))
                     cmd.Parameters.Add(New SqlParameter("@IdEstatus", 0))
-
                     cmd.Parameters("@IdProduccion").Direction = ParameterDirection.InputOutput
                     cmd.Parameters("@IdEstatus").Direction = ParameterDirection.InputOutput
                     cmd.ExecuteNonQuery()
@@ -241,5 +224,25 @@ Public Class Produccion
                 End Try
             End If
         End If
+    End Sub
+    Private Sub TsEliminar_Click(sender As Object, e As EventArgs) Handles TsEliminar.Click
+        Dim index As Integer
+        index = DgBoteIngresado.CurrentCell.RowIndex
+        Dim id As Integer
+        id = DgBoteIngresado.Rows(index).Cells("idbotes").Value
+        Try
+            cnn.Open()
+            Dim cmd As New SqlCommand("sp_EliBotes", cnn)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add(New SqlParameter("@IdBotes", id))
+            cmd.ExecuteNonQuery()
+            cnn.Close()
+            cargarData()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+    Private Sub ToolStripLabel1_Click(sender As Object, e As EventArgs) Handles ToolStripLabel1.Click
+        Close()
     End Sub
 End Class

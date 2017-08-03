@@ -207,6 +207,7 @@
     <Content Include="Iconos\Actualizar.ico" />
     <Content Include="Iconos\Black Icon Package Icon 36.ico" />
     <Content Include="Iconos\Imprimir.ico" />
+    <None Include="Resources\Black Icon Package Icon 21.ico" />
     <Content Include="Scripts\Procedures\dbo.sp_EliProducto.sql" />
     <Content Include="Scripts\Procedures\dbo.sp_InsBotes.sql" />
     <Content Include="Scripts\Procedures\dbo.sp_InsProduccion.sql" />
