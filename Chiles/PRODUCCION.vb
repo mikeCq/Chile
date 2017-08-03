@@ -207,12 +207,7 @@ Public Class Produccion
                     cmd.CommandType = CommandType.StoredProcedure
                     cmd.Parameters.Add(New SqlParameter("@IdProduccion", TxIdProduccion.Text))
                     cmd.Parameters.Add(New SqlParameter("@Fecha", DtFecha.Value))
-
-                    cmd.Parameters.Add(New SqlParameter("@FechaLetra", DtFecha.Value.Day))
-
-
-
-
+                    cmd.Parameters.Add(New SqlParameter("@FechaLetra", TxNombreDia.Text))
                     cmd.Parameters.Add(New SqlParameter("@Precio", NuPrecio.Value))
                     cmd.Parameters.Add(New SqlParameter("@CantidadBotes", DgBoteIngresado.RowCount))
                     cmd.Parameters.Add(New SqlParameter("@SumaBotes", TotalPrecio))
