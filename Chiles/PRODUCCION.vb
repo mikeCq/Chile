@@ -122,6 +122,7 @@ Public Class Produccion
                     cmd.Parameters.Add(New SqlParameter("@IdBotes", 0))
                     cmd.Parameters.Add(New SqlParameter("@Empleado", TxCaptura.Text))
                     cmd.Parameters.Add(New SqlParameter("@Fecha", Now))
+                    cmd.Parameters.Add(New SqlParameter("@FechaLetra", UCase(WeekdayName(Weekday(Now)))))
                     cmd.Parameters.Add(New SqlParameter("@PrecioBote", NuPrecio.Value))
                     cmd.Parameters.Add(New SqlParameter("@IdProduccion", TxIdProduccion.Text))
                     'cmd.Parameters("@IdProduccion").Direction = ParameterDirection.InputOutput
