@@ -10,28 +10,40 @@ Public Class REPORTELIQUIDACION
     Private Sub REPORTELIQUIDACION_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             cnn.Open()
-            Dim da1 As New SqlCommand("sp_ReporteLiquidacionDetalle", cnn)
-            Dim Ruta1 As String = "C:\RPTCH\RPT\RptLiquidacionDetalle.rpt"
-            da1.CommandType = CommandType.StoredProcedure
+            Dim daInforme As New SqlCommand("sp_ReporteLiquidacionTotal", cnn)
+            Dim daSubinforme As New SqlCommand("sp_ReporteLiquidacionDetalle", cnn)
+            Dim Ruta As String = "C:\RPTCH\RPT\RptLiquidacionTotal.rpt"
+            daInforme.CommandType = CommandType.StoredProcedure
             Dim NombreCampo As New SqlClient.SqlParameter()
             NombreCampo.ParameterName = "@IdProduccion"
             NombreCampo.SqlDbType = SqlDbType.Int
             NombreCampo.Value = LIQUIDACIONES.codigoProduccion
-            da1.Parameters.Add(NombreCampo)
-            Dim dasp_ReporteBoletaEntrada1 As New SqlClient.SqlDataAdapter()
-            dasp_ReporteBoletaEntrada1.SelectCommand = da1
-            Dim ds1 As New DataTable
-            dasp_ReporteBoletaEntrada1.Fill(ds1)
+            daInforme.Parameters.Add(NombreCampo)
+            Dim dasp_Informe As New SqlClient.SqlDataAdapter()
+            dasp_Informe.SelectCommand = daInforme
+            Dim dsInforme As New DataTable
+            dasp_Informe.Fill(dsInforme)
 
-            Dim CrReport1 As New CrystalDecisions.CrystalReports.Engine.ReportDocument
+            daSubinforme.CommandType = CommandType.StoredProcedure
+            Dim IdProduccion As New SqlClient.SqlParameter()
+            IdProduccion.ParameterName = "@IdProduccion"
+            IdProduccion.SqlDbType = SqlDbType.Int
+            IdProduccion.Value = LIQUIDACIONES.codigoProduccion
+            daSubinforme.Parameters.Add(IdProduccion)
+            Dim dasp_Subinforme As New SqlClient.SqlDataAdapter()
+            dasp_Subinforme.SelectCommand = daSubinforme
+            Dim dsSubinforme As New DataTable
+            dasp_Subinforme.Fill(dsSubinforme)
+
+            Dim CrReport As New CrystalDecisions.CrystalReports.Engine.ReportDocument
             ' Asigno el reporte 
-            CrReport1 = New CrystalDecisions.CrystalReports.Engine.ReportDocument()
-            CrReport1.Load(Ruta1)
-            CrReport1.SetDataSource(ds1)
+            CrReport = New CrystalDecisions.CrystalReports.Engine.ReportDocument()
 
-            CrLiquidacion.ReportSource = CrReport1
+            CrReport.Load(Ruta)
+            CrReport.SetDataSource(dsInforme)
+            CrReport.Subreports("RptLiquidacionDetalle.rpt").SetDataSource(dsSubinforme)
+            CrLiquidacion.ReportSource = CrReport
             cnn.Close()
-            cargaSubInforme()
         Catch ex As Exception
             MessageBox.Show("excepcion: " & ex.Message, "Mostrando Reporte")
         End Try
