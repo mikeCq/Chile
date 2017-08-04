@@ -77,6 +77,11 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
+<member name="T:Chiles.ChilesDBDataSet.LiquidacionDetalleDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
 <member name="T:Chiles.ChilesDBDataSet.BotesRow">
 <summary>
 Represents strongly named DataRow class.
@@ -88,6 +93,11 @@ Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:Chiles.ChilesDBDataSet.ProductosRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Chiles.ChilesDBDataSet.LiquidacionDetalleRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -107,6 +117,11 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
+<member name="T:Chiles.ChilesDBDataSet.LiquidacionDetalleRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
 <member name="T:Chiles.ChilesDBDataSetTableAdapters.BotesTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
@@ -118,6 +133,11 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:Chiles.ChilesDBDataSetTableAdapters.ProductosTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Chiles.ChilesDBDataSetTableAdapters.LiquidacionDetalleTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

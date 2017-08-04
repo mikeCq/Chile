@@ -187,22 +187,16 @@ Public Class LIQUIDACIONES
         Try
             'Cambiar el estado
             cnn.Open()
-            cmd = New SqlCommand("sp_InsProduccion", cnn)
+            cmd = New SqlCommand("sp_InsLiqDet", cnn)
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.Add(New SqlParameter("@IdProduccion", TxIdProduccion.Text))
-            cmd.Parameters.Add(New SqlParameter("@Fecha", DtFecha.Value))
-            cmd.Parameters.Add(New SqlParameter("@Precio", NuPrecio.Value))
-            cmd.Parameters.Add(New SqlParameter("@CantidadBotes", TxCantidadBotes.Text))
-            cmd.Parameters.Add(New SqlParameter("@SumaBotes", NuTotalPagar.Value))
-            cmd.Parameters.Add(New SqlParameter("@Producto", CbProducto.Text))
-            cmd.Parameters.Add(New SqlParameter("@IdEstatus", 3))
             cmd.ExecuteNonQuery()
             llenaDg()
         Catch ex As Exception
             MsgBox("Problemas al conectar con al base de datos ")
         Finally
             cnn.Close()
-                End Try
+        End Try
         'End If
         'Next Contador
     End Sub
