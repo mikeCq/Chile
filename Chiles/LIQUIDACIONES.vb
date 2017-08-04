@@ -4,6 +4,15 @@ Public Class LIQUIDACIONES
     Dim cnn As New SqlConnection(VarGlob.ConexionPrincipal)
     Dim cmd As SqlCommand
     Dim DtBotes As New DataTable
+    Private _codigoProduccion As Integer
+    Public Property codigoProduccion() As Integer
+        Get
+            Return _codigoProduccion
+        End Get
+        Set(value As Integer)
+            _codigoProduccion = value
+        End Set
+    End Property
     Private Sub LIQUIDACIONES_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Nuevo()
         llenaCombos()
@@ -192,13 +201,24 @@ Public Class LIQUIDACIONES
             cmd.Parameters.Add(New SqlParameter("@IdProduccion", TxIdProduccion.Text))
             cmd.ExecuteNonQuery()
             llenaDg()
+
         Catch ex As Exception
             MsgBox("Problemas al conectar con al base de datos ")
         Finally
             cnn.Close()
+            Dim opc As DialogResult = MessageBox.Show("¿Desea imprimir el reporte de liquidacion?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            If opc = DialogResult.Yes Then
+
+                ImprimirReporte()
+
+            End If
         End Try
         'End If
         'Next Contador
+    End Sub
+    Private Sub ImprimirReporte()
+        _codigoProduccion = TxIdProduccion.Text
+        REPORTELIQUIDACION.ShowDialog()
     End Sub
     Private Sub DgProducciones_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgProducciones.CellContentClick
         Dim Contador As Integer

@@ -401,6 +401,10 @@ Partial Public Class ChilesDBDataSet
         
         Private columnIdProduccion As Global.System.Data.DataColumn
         
+        Private columnPrecioBote As Global.System.Data.DataColumn
+        
+        Private columnFechaLetra As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -469,6 +473,22 @@ Partial Public Class ChilesDBDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property PrecioBoteColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPrecioBote
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property FechaLetraColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFechaLetra
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -505,9 +525,9 @@ Partial Public Class ChilesDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddBotesRow(ByVal Empleado As Integer, ByVal Fecha As Date, ByVal parentProduccionRowByfk_Produccion As ProduccionRow) As BotesRow
+        Public Overloads Function AddBotesRow(ByVal Empleado As Integer, ByVal Fecha As Date, ByVal parentProduccionRowByfk_Produccion As ProduccionRow, ByVal PrecioBote As Double, ByVal FechaLetra As String) As BotesRow
             Dim rowBotesRow As BotesRow = CType(Me.NewRow,BotesRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Empleado, Fecha, Nothing}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Empleado, Fecha, Nothing, PrecioBote, FechaLetra}
             If (Not (parentProduccionRowByfk_Produccion) Is Nothing) Then
                 columnValuesArray(3) = parentProduccionRowByfk_Produccion(0)
             End If
@@ -543,6 +563,8 @@ Partial Public Class ChilesDBDataSet
             Me.columnEmpleado = MyBase.Columns("Empleado")
             Me.columnFecha = MyBase.Columns("Fecha")
             Me.columnIdProduccion = MyBase.Columns("IdProduccion")
+            Me.columnPrecioBote = MyBase.Columns("PrecioBote")
+            Me.columnFechaLetra = MyBase.Columns("FechaLetra")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -556,6 +578,10 @@ Partial Public Class ChilesDBDataSet
             MyBase.Columns.Add(Me.columnFecha)
             Me.columnIdProduccion = New Global.System.Data.DataColumn("IdProduccion", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnIdProduccion)
+            Me.columnPrecioBote = New Global.System.Data.DataColumn("PrecioBote", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPrecioBote)
+            Me.columnFechaLetra = New Global.System.Data.DataColumn("FechaLetra", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFechaLetra)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnIdBotes}, true))
             Me.columnIdBotes.AutoIncrement = true
             Me.columnIdBotes.AutoIncrementSeed = -1
@@ -564,6 +590,7 @@ Partial Public Class ChilesDBDataSet
             Me.columnIdBotes.ReadOnly = true
             Me.columnIdBotes.Unique = true
             Me.columnIdProduccion.AllowDBNull = false
+            Me.columnFechaLetra.MaxLength = 20
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -713,6 +740,10 @@ Partial Public Class ChilesDBDataSet
         
         Private columnProducto As Global.System.Data.DataColumn
         
+        Private columnIdEstatus As Global.System.Data.DataColumn
+        
+        Private columnFechaLetra As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -797,6 +828,22 @@ Partial Public Class ChilesDBDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property IdEstatusColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIdEstatus
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property FechaLetraColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFechaLetra
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -833,9 +880,9 @@ Partial Public Class ChilesDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddProduccionRow(ByVal Fecha As Date, ByVal Precio As Decimal, ByVal CantidadBotes As Integer, ByVal SumaBotes As Decimal, ByVal Producto As String) As ProduccionRow
+        Public Overloads Function AddProduccionRow(ByVal Fecha As Date, ByVal Precio As Decimal, ByVal CantidadBotes As Integer, ByVal SumaBotes As Decimal, ByVal Producto As String, ByVal IdEstatus As Integer, ByVal FechaLetra As String) As ProduccionRow
             Dim rowProduccionRow As ProduccionRow = CType(Me.NewRow,ProduccionRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Fecha, Precio, CantidadBotes, SumaBotes, Producto}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Fecha, Precio, CantidadBotes, SumaBotes, Producto, IdEstatus, FechaLetra}
             rowProduccionRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowProduccionRow)
             Return rowProduccionRow
@@ -870,6 +917,8 @@ Partial Public Class ChilesDBDataSet
             Me.columnCantidadBotes = MyBase.Columns("CantidadBotes")
             Me.columnSumaBotes = MyBase.Columns("SumaBotes")
             Me.columnProducto = MyBase.Columns("Producto")
+            Me.columnIdEstatus = MyBase.Columns("IdEstatus")
+            Me.columnFechaLetra = MyBase.Columns("FechaLetra")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -887,6 +936,10 @@ Partial Public Class ChilesDBDataSet
             MyBase.Columns.Add(Me.columnSumaBotes)
             Me.columnProducto = New Global.System.Data.DataColumn("Producto", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnProducto)
+            Me.columnIdEstatus = New Global.System.Data.DataColumn("IdEstatus", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIdEstatus)
+            Me.columnFechaLetra = New Global.System.Data.DataColumn("FechaLetra", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFechaLetra)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnIdProduccion}, true))
             Me.columnIdProduccion.AutoIncrement = true
             Me.columnIdProduccion.AutoIncrementSeed = -1
@@ -895,6 +948,7 @@ Partial Public Class ChilesDBDataSet
             Me.columnIdProduccion.ReadOnly = true
             Me.columnIdProduccion.Unique = true
             Me.columnProducto.MaxLength = 20
+            Me.columnFechaLetra.MaxLength = 20
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1734,6 +1788,36 @@ Partial Public Class ChilesDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property PrecioBote() As Double
+            Get
+                Try 
+                    Return CType(Me(Me.tableBotes.PrecioBoteColumn),Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'PrecioBote' de la tabla 'Botes' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableBotes.PrecioBoteColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property FechaLetra() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableBotes.FechaLetraColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'FechaLetra' de la tabla 'Botes' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableBotes.FechaLetraColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property ProduccionRow() As ProduccionRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("fk_Produccion")),ProduccionRow)
@@ -1765,6 +1849,30 @@ Partial Public Class ChilesDBDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetFechaNull()
             Me(Me.tableBotes.FechaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsPrecioBoteNull() As Boolean
+            Return Me.IsNull(Me.tableBotes.PrecioBoteColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetPrecioBoteNull()
+            Me(Me.tableBotes.PrecioBoteColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsFechaLetraNull() As Boolean
+            Return Me.IsNull(Me.tableBotes.FechaLetraColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetFechaLetraNull()
+            Me(Me.tableBotes.FechaLetraColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -1871,6 +1979,36 @@ Partial Public Class ChilesDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property IdEstatus() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableProduccion.IdEstatusColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'IdEstatus' de la tabla 'Produccion' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableProduccion.IdEstatusColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property FechaLetra() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableProduccion.FechaLetraColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'FechaLetra' de la tabla 'Produccion' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableProduccion.FechaLetraColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsFechaNull() As Boolean
             Return Me.IsNull(Me.tableProduccion.FechaColumn)
         End Function
@@ -1927,6 +2065,30 @@ Partial Public Class ChilesDBDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetProductoNull()
             Me(Me.tableProduccion.ProductoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsIdEstatusNull() As Boolean
+            Return Me.IsNull(Me.tableProduccion.IdEstatusColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetIdEstatusNull()
+            Me(Me.tableProduccion.IdEstatusColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsFechaLetraNull() As Boolean
+            Return Me.IsNull(Me.tableProduccion.FechaLetraColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetFechaLetraNull()
+            Me(Me.tableProduccion.FechaLetraColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2532,13 +2694,17 @@ Namespace ChilesDBDataSetTableAdapters
             tableMapping.ColumnMappings.Add("Empleado", "Empleado")
             tableMapping.ColumnMappings.Add("Fecha", "Fecha")
             tableMapping.ColumnMappings.Add("IdProduccion", "IdProduccion")
+            tableMapping.ColumnMappings.Add("PrecioBote", "PrecioBote")
+            tableMapping.ColumnMappings.Add("FechaLetra", "FechaLetra")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Botes] WHERE (([IdBotes] = @Original_IdBotes) AND ((@IsNull_Em"& _ 
-                "pleado = 1 AND [Empleado] IS NULL) OR ([Empleado] = @Original_Empleado)) AND ((@"& _ 
-                "IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND ([IdPr"& _ 
-                "oduccion] = @Original_IdProduccion))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Botes] WHERE (([IdBotes] = @Original_IdBotes) AND ((@IsNull_Empleado"& _ 
+                " = 1 AND [Empleado] IS NULL) OR ([Empleado] = @Original_Empleado)) AND ((@IsNull"& _ 
+                "_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND ([IdProducci"& _ 
+                "on] = @Original_IdProduccion) AND ((@IsNull_FechaLetra = 1 AND [FechaLetra] IS N"& _ 
+                "ULL) OR ([FechaLetra] = @Original_FechaLetra)) AND ((@IsNull_PrecioBote = 1 AND "& _ 
+                "[PrecioBote] IS NULL) OR ([PrecioBote] = @Original_PrecioBote)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IdBotes", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdBotes", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Empleado", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Empleado", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -2546,33 +2712,49 @@ Namespace ChilesDBDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Fecha", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Fecha", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Fecha", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Fecha", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IdProduccion", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdProduccion", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_FechaLetra", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FechaLetra", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FechaLetra", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FechaLetra", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PrecioBote", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PrecioBote", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PrecioBote", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PrecioBote", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Botes] ([Empleado], [Fecha], [IdProduccion]) VALUES (@Empleado"& _ 
-                ", @Fecha, @IdProduccion);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT IdBotes, Empleado, Fecha, IdProduccion FROM Bo"& _ 
-                "tes WHERE (IdBotes = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Botes] ([Empleado], [Fecha], [IdProduccion], [FechaLetra], [PrecioBo"& _ 
+                "te]) VALUES (@Empleado, @Fecha, @IdProduccion, @FechaLetra, @PrecioBote);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELEC"& _ 
+                "T IdBotes, Empleado, Fecha, IdProduccion, FechaLetra, PrecioBote FROM Botes WHER"& _ 
+                "E (IdBotes = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Empleado", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Empleado", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Fecha", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Fecha", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IdProduccion", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdProduccion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FechaLetra", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FechaLetra", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PrecioBote", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PrecioBote", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Botes] SET [Empleado] = @Empleado, [Fecha] = @Fecha, [IdProduccion]"& _ 
-                " = @IdProduccion WHERE (([IdBotes] = @Original_IdBotes) AND ((@IsNull_Empleado ="& _ 
-                " 1 AND [Empleado] IS NULL) OR ([Empleado] = @Original_Empleado)) AND ((@IsNull_F"& _ 
-                "echa = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND ([IdProduccion"& _ 
-                "] = @Original_IdProduccion));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT IdBotes, Empleado, Fecha, IdProduccion FRO"& _ 
-                "M Botes WHERE (IdBotes = @IdBotes)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [Botes] SET [Empleado] = @Empleado, [Fecha] = @Fecha, [IdProduccion] = @Id"& _ 
+                "Produccion, [FechaLetra] = @FechaLetra, [PrecioBote] = @PrecioBote WHERE (([IdBo"& _ 
+                "tes] = @Original_IdBotes) AND ((@IsNull_Empleado = 1 AND [Empleado] IS NULL) OR "& _ 
+                "([Empleado] = @Original_Empleado)) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) "& _ 
+                "OR ([Fecha] = @Original_Fecha)) AND ([IdProduccion] = @Original_IdProduccion) AN"& _ 
+                "D ((@IsNull_FechaLetra = 1 AND [FechaLetra] IS NULL) OR ([FechaLetra] = @Origina"& _ 
+                "l_FechaLetra)) AND ((@IsNull_PrecioBote = 1 AND [PrecioBote] IS NULL) OR ([Preci"& _ 
+                "oBote] = @Original_PrecioBote)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT IdBotes, Empleado, Fecha, IdProduccion"& _ 
+                ", FechaLetra, PrecioBote FROM Botes WHERE (IdBotes = @IdBotes)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Empleado", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Empleado", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Fecha", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Fecha", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IdProduccion", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdProduccion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FechaLetra", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FechaLetra", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PrecioBote", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PrecioBote", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IdBotes", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdBotes", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Empleado", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Empleado", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Empleado", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Empleado", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Fecha", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Fecha", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Fecha", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Fecha", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IdProduccion", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdProduccion", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_FechaLetra", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FechaLetra", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FechaLetra", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FechaLetra", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PrecioBote", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PrecioBote", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PrecioBote", Global.System.Data.SqlDbType.Float, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PrecioBote", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IdBotes", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "IdBotes", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -2589,7 +2771,7 @@ Namespace ChilesDBDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT IdBotes, Empleado, Fecha, IdProduccion FROM dbo.Botes"
+            Me._commandCollection(0).CommandText = "SELECT IdBotes, Empleado, Fecha, IdProduccion, FechaLetra, PrecioBote FROM Botes"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -2649,7 +2831,7 @@ Namespace ChilesDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_IdBotes As Integer, ByVal Original_Empleado As Global.System.Nullable(Of Integer), ByVal Original_Fecha As Global.System.Nullable(Of Date), ByVal Original_IdProduccion As Integer) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_IdBotes As Integer, ByVal Original_Empleado As Global.System.Nullable(Of Integer), ByVal Original_Fecha As Global.System.Nullable(Of Date), ByVal Original_IdProduccion As Integer, ByVal Original_FechaLetra As String, ByVal Original_PrecioBote As Global.System.Nullable(Of Double)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_IdBotes,Integer)
             If (Original_Empleado.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
@@ -2666,6 +2848,20 @@ Namespace ChilesDBDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
             Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_IdProduccion,Integer)
+            If (Original_FechaLetra Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_FechaLetra,String)
+            End If
+            If (Original_PrecioBote.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(Original_PrecioBote.Value,Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(9).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2685,7 +2881,7 @@ Namespace ChilesDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Empleado As Global.System.Nullable(Of Integer), ByVal Fecha As Global.System.Nullable(Of Date), ByVal IdProduccion As Integer) As Integer
+        Public Overloads Overridable Function Insert(ByVal Empleado As Global.System.Nullable(Of Integer), ByVal Fecha As Global.System.Nullable(Of Date), ByVal IdProduccion As Integer, ByVal FechaLetra As String, ByVal PrecioBote As Global.System.Nullable(Of Double)) As Integer
             If (Empleado.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(Empleado.Value,Integer)
             Else
@@ -2697,6 +2893,16 @@ Namespace ChilesDBDataSetTableAdapters
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
             Me.Adapter.InsertCommand.Parameters(2).Value = CType(IdProduccion,Integer)
+            If (FechaLetra Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(FechaLetra,String)
+            End If
+            If (PrecioBote.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(PrecioBote.Value,Double)
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2716,7 +2922,7 @@ Namespace ChilesDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Empleado As Global.System.Nullable(Of Integer), ByVal Fecha As Global.System.Nullable(Of Date), ByVal IdProduccion As Integer, ByVal Original_IdBotes As Integer, ByVal Original_Empleado As Global.System.Nullable(Of Integer), ByVal Original_Fecha As Global.System.Nullable(Of Date), ByVal Original_IdProduccion As Integer, ByVal IdBotes As Integer) As Integer
+        Public Overloads Overridable Function Update(ByVal Empleado As Global.System.Nullable(Of Integer), ByVal Fecha As Global.System.Nullable(Of Date), ByVal IdProduccion As Integer, ByVal FechaLetra As String, ByVal PrecioBote As Global.System.Nullable(Of Double), ByVal Original_IdBotes As Integer, ByVal Original_Empleado As Global.System.Nullable(Of Integer), ByVal Original_Fecha As Global.System.Nullable(Of Date), ByVal Original_IdProduccion As Integer, ByVal Original_FechaLetra As String, ByVal Original_PrecioBote As Global.System.Nullable(Of Double), ByVal IdBotes As Integer) As Integer
             If (Empleado.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Empleado.Value,Integer)
             Else
@@ -2728,23 +2934,47 @@ Namespace ChilesDBDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
             Me.Adapter.UpdateCommand.Parameters(2).Value = CType(IdProduccion,Integer)
-            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_IdBotes,Integer)
-            If (Original_Empleado.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_Empleado.Value,Integer)
+            If (FechaLetra Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(FechaLetra,String)
             End If
-            If (Original_Fecha.HasValue = true) Then
+            If (PrecioBote.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(PrecioBote.Value,Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_IdBotes,Integer)
+            If (Original_Empleado.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_Fecha.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_Empleado.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_IdProduccion,Integer)
-            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(IdBotes,Integer)
+            If (Original_Fecha.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_Fecha.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_IdProduccion,Integer)
+            If (Original_FechaLetra Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_FechaLetra,String)
+            End If
+            If (Original_PrecioBote.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_PrecioBote.Value,Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(15).Value = CType(IdBotes,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2764,8 +2994,8 @@ Namespace ChilesDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Empleado As Global.System.Nullable(Of Integer), ByVal Fecha As Global.System.Nullable(Of Date), ByVal IdProduccion As Integer, ByVal Original_IdBotes As Integer, ByVal Original_Empleado As Global.System.Nullable(Of Integer), ByVal Original_Fecha As Global.System.Nullable(Of Date), ByVal Original_IdProduccion As Integer) As Integer
-            Return Me.Update(Empleado, Fecha, IdProduccion, Original_IdBotes, Original_Empleado, Original_Fecha, Original_IdProduccion, Original_IdBotes)
+        Public Overloads Overridable Function Update(ByVal Empleado As Global.System.Nullable(Of Integer), ByVal Fecha As Global.System.Nullable(Of Date), ByVal IdProduccion As Integer, ByVal FechaLetra As String, ByVal PrecioBote As Global.System.Nullable(Of Double), ByVal Original_IdBotes As Integer, ByVal Original_Empleado As Global.System.Nullable(Of Integer), ByVal Original_Fecha As Global.System.Nullable(Of Date), ByVal Original_IdProduccion As Integer, ByVal Original_FechaLetra As String, ByVal Original_PrecioBote As Global.System.Nullable(Of Double)) As Integer
+            Return Me.Update(Empleado, Fecha, IdProduccion, FechaLetra, PrecioBote, Original_IdBotes, Original_Empleado, Original_Fecha, Original_IdProduccion, Original_FechaLetra, Original_PrecioBote, Original_IdBotes)
         End Function
     End Class
     
@@ -2902,16 +3132,20 @@ Namespace ChilesDBDataSetTableAdapters
             tableMapping.ColumnMappings.Add("CantidadBotes", "CantidadBotes")
             tableMapping.ColumnMappings.Add("SumaBotes", "SumaBotes")
             tableMapping.ColumnMappings.Add("Producto", "Producto")
+            tableMapping.ColumnMappings.Add("IdEstatus", "IdEstatus")
+            tableMapping.ColumnMappings.Add("FechaLetra", "FechaLetra")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Produccion] WHERE (([IdProduccion] = @Original_IdProduccion) A"& _ 
-                "ND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND "& _ 
-                "((@IsNull_Precio = 1 AND [Precio] IS NULL) OR ([Precio] = @Original_Precio)) AND"& _ 
-                " ((@IsNull_CantidadBotes = 1 AND [CantidadBotes] IS NULL) OR ([CantidadBotes] = "& _ 
-                "@Original_CantidadBotes)) AND ((@IsNull_SumaBotes = 1 AND [SumaBotes] IS NULL) O"& _ 
-                "R ([SumaBotes] = @Original_SumaBotes)) AND ((@IsNull_Producto = 1 AND [Producto]"& _ 
-                " IS NULL) OR ([Producto] = @Original_Producto)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Produccion] WHERE (([IdProduccion] = @Original_IdProduccion) AND ((@"& _ 
+                "IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND ((@IsN"& _ 
+                "ull_Precio = 1 AND [Precio] IS NULL) OR ([Precio] = @Original_Precio)) AND ((@Is"& _ 
+                "Null_CantidadBotes = 1 AND [CantidadBotes] IS NULL) OR ([CantidadBotes] = @Origi"& _ 
+                "nal_CantidadBotes)) AND ((@IsNull_SumaBotes = 1 AND [SumaBotes] IS NULL) OR ([Su"& _ 
+                "maBotes] = @Original_SumaBotes)) AND ((@IsNull_Producto = 1 AND [Producto] IS NU"& _ 
+                "LL) OR ([Producto] = @Original_Producto)) AND ((@IsNull_FechaLetra = 1 AND [Fech"& _ 
+                "aLetra] IS NULL) OR ([FechaLetra] = @Original_FechaLetra)) AND ((@IsNull_IdEstat"& _ 
+                "us = 1 AND [IdEstatus] IS NULL) OR ([IdEstatus] = @Original_IdEstatus)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IdProduccion", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdProduccion", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Fecha", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Fecha", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -2924,36 +3158,48 @@ Namespace ChilesDBDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SumaBotes", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 10, 2, "SumaBotes", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Producto", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Producto", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Producto", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Producto", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_FechaLetra", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FechaLetra", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FechaLetra", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FechaLetra", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IdEstatus", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdEstatus", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IdEstatus", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdEstatus", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Produccion] ([Fecha], [Precio], [CantidadBotes], [SumaBotes], "& _ 
-                "[Producto]) VALUES (@Fecha, @Precio, @CantidadBotes, @SumaBotes, @Producto);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SE"& _ 
-                "LECT IdProduccion, Fecha, Precio, CantidadBotes, SumaBotes, Producto FROM Produc"& _ 
-                "cion WHERE (IdProduccion = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Produccion] ([Fecha], [Precio], [CantidadBotes], [SumaBotes], [Produ"& _ 
+                "cto], [FechaLetra], [IdEstatus]) VALUES (@Fecha, @Precio, @CantidadBotes, @SumaB"& _ 
+                "otes, @Producto, @FechaLetra, @IdEstatus);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT IdProduccion, Fecha, Precio, "& _ 
+                "CantidadBotes, SumaBotes, Producto, FechaLetra, IdEstatus FROM Produccion WHERE "& _ 
+                "(IdProduccion = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Fecha", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Fecha", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Precio", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 10, 2, "Precio", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CantidadBotes", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CantidadBotes", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SumaBotes", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 10, 2, "SumaBotes", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Producto", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Producto", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FechaLetra", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FechaLetra", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IdEstatus", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdEstatus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Produccion] SET [Fecha] = @Fecha, [Precio] = @Precio, [CantidadBote"& _ 
-                "s] = @CantidadBotes, [SumaBotes] = @SumaBotes, [Producto] = @Producto WHERE (([I"& _ 
-                "dProduccion] = @Original_IdProduccion) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NU"& _ 
-                "LL) OR ([Fecha] = @Original_Fecha)) AND ((@IsNull_Precio = 1 AND [Precio] IS NUL"& _ 
-                "L) OR ([Precio] = @Original_Precio)) AND ((@IsNull_CantidadBotes = 1 AND [Cantid"& _ 
-                "adBotes] IS NULL) OR ([CantidadBotes] = @Original_CantidadBotes)) AND ((@IsNull_"& _ 
-                "SumaBotes = 1 AND [SumaBotes] IS NULL) OR ([SumaBotes] = @Original_SumaBotes)) A"& _ 
-                "ND ((@IsNull_Producto = 1 AND [Producto] IS NULL) OR ([Producto] = @Original_Pro"& _ 
-                "ducto)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT IdProduccion, Fecha, Precio, CantidadBotes, SumaBotes, Product"& _ 
-                "o FROM Produccion WHERE (IdProduccion = @IdProduccion)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [Produccion] SET [Fecha] = @Fecha, [Precio] = @Precio, [CantidadBotes] = @"& _ 
+                "CantidadBotes, [SumaBotes] = @SumaBotes, [Producto] = @Producto, [FechaLetra] = "& _ 
+                "@FechaLetra, [IdEstatus] = @IdEstatus WHERE (([IdProduccion] = @Original_IdProdu"& _ 
+                "ccion) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fech"& _ 
+                "a)) AND ((@IsNull_Precio = 1 AND [Precio] IS NULL) OR ([Precio] = @Original_Prec"& _ 
+                "io)) AND ((@IsNull_CantidadBotes = 1 AND [CantidadBotes] IS NULL) OR ([CantidadB"& _ 
+                "otes] = @Original_CantidadBotes)) AND ((@IsNull_SumaBotes = 1 AND [SumaBotes] IS"& _ 
+                " NULL) OR ([SumaBotes] = @Original_SumaBotes)) AND ((@IsNull_Producto = 1 AND [P"& _ 
+                "roducto] IS NULL) OR ([Producto] = @Original_Producto)) AND ((@IsNull_FechaLetra"& _ 
+                " = 1 AND [FechaLetra] IS NULL) OR ([FechaLetra] = @Original_FechaLetra)) AND ((@"& _ 
+                "IsNull_IdEstatus = 1 AND [IdEstatus] IS NULL) OR ([IdEstatus] = @Original_IdEsta"& _ 
+                "tus)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT IdProduccion, Fecha, Precio, CantidadBotes, SumaBotes, Producto,"& _ 
+                " FechaLetra, IdEstatus FROM Produccion WHERE (IdProduccion = @IdProduccion)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Fecha", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Fecha", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Precio", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 10, 2, "Precio", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CantidadBotes", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CantidadBotes", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SumaBotes", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 10, 2, "SumaBotes", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Producto", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Producto", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FechaLetra", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FechaLetra", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IdEstatus", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdEstatus", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IdProduccion", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdProduccion", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Fecha", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Fecha", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Fecha", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Fecha", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -2965,6 +3211,10 @@ Namespace ChilesDBDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SumaBotes", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 10, 2, "SumaBotes", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Producto", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Producto", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Producto", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Producto", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_FechaLetra", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FechaLetra", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FechaLetra", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FechaLetra", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IdEstatus", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdEstatus", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IdEstatus", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IdEstatus", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IdProduccion", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "IdProduccion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -2981,8 +3231,8 @@ Namespace ChilesDBDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT IdProduccion, Fecha, Precio, CantidadBotes, SumaBotes, Producto FROM dbo.P"& _ 
-                "roduccion"
+            Me._commandCollection(0).CommandText = "SELECT IdProduccion, Fecha, Precio, CantidadBotes, SumaBotes, Producto, FechaLetr"& _ 
+                "a, IdEstatus FROM Produccion"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -3042,7 +3292,7 @@ Namespace ChilesDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_IdProduccion As Integer, ByVal Original_Fecha As Global.System.Nullable(Of Date), ByVal Original_Precio As Global.System.Nullable(Of Decimal), ByVal Original_CantidadBotes As Global.System.Nullable(Of Integer), ByVal Original_SumaBotes As Global.System.Nullable(Of Decimal), ByVal Original_Producto As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_IdProduccion As Integer, ByVal Original_Fecha As Global.System.Nullable(Of Date), ByVal Original_Precio As Global.System.Nullable(Of Decimal), ByVal Original_CantidadBotes As Global.System.Nullable(Of Integer), ByVal Original_SumaBotes As Global.System.Nullable(Of Decimal), ByVal Original_Producto As String, ByVal Original_FechaLetra As String, ByVal Original_IdEstatus As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_IdProduccion,Integer)
             If (Original_Fecha.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
@@ -3079,6 +3329,20 @@ Namespace ChilesDBDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_Producto,String)
             End If
+            If (Original_FechaLetra Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_FechaLetra,String)
+            End If
+            If (Original_IdEstatus.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_IdEstatus.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -3098,7 +3362,7 @@ Namespace ChilesDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Fecha As Global.System.Nullable(Of Date), ByVal Precio As Global.System.Nullable(Of Decimal), ByVal CantidadBotes As Global.System.Nullable(Of Integer), ByVal SumaBotes As Global.System.Nullable(Of Decimal), ByVal Producto As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal Fecha As Global.System.Nullable(Of Date), ByVal Precio As Global.System.Nullable(Of Decimal), ByVal CantidadBotes As Global.System.Nullable(Of Integer), ByVal SumaBotes As Global.System.Nullable(Of Decimal), ByVal Producto As String, ByVal FechaLetra As String, ByVal IdEstatus As Global.System.Nullable(Of Integer)) As Integer
             If (Fecha.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(Fecha.Value,Date)
             Else
@@ -3124,6 +3388,16 @@ Namespace ChilesDBDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(4).Value = CType(Producto,String)
             End If
+            If (FechaLetra Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(FechaLetra,String)
+            End If
+            If (IdEstatus.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(IdEstatus.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -3143,7 +3417,23 @@ Namespace ChilesDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Fecha As Global.System.Nullable(Of Date), ByVal Precio As Global.System.Nullable(Of Decimal), ByVal CantidadBotes As Global.System.Nullable(Of Integer), ByVal SumaBotes As Global.System.Nullable(Of Decimal), ByVal Producto As String, ByVal Original_IdProduccion As Integer, ByVal Original_Fecha As Global.System.Nullable(Of Date), ByVal Original_Precio As Global.System.Nullable(Of Decimal), ByVal Original_CantidadBotes As Global.System.Nullable(Of Integer), ByVal Original_SumaBotes As Global.System.Nullable(Of Decimal), ByVal Original_Producto As String, ByVal IdProduccion As Integer) As Integer
+        Public Overloads Overridable Function Update( _
+                    ByVal Fecha As Global.System.Nullable(Of Date),  _
+                    ByVal Precio As Global.System.Nullable(Of Decimal),  _
+                    ByVal CantidadBotes As Global.System.Nullable(Of Integer),  _
+                    ByVal SumaBotes As Global.System.Nullable(Of Decimal),  _
+                    ByVal Producto As String,  _
+                    ByVal FechaLetra As String,  _
+                    ByVal IdEstatus As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_IdProduccion As Integer,  _
+                    ByVal Original_Fecha As Global.System.Nullable(Of Date),  _
+                    ByVal Original_Precio As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_CantidadBotes As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_SumaBotes As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_Producto As String,  _
+                    ByVal Original_FechaLetra As String,  _
+                    ByVal Original_IdEstatus As Global.System.Nullable(Of Integer),  _
+                    ByVal IdProduccion As Integer) As Integer
             If (Fecha.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Fecha.Value,Date)
             Else
@@ -3169,43 +3459,67 @@ Namespace ChilesDBDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Producto,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_IdProduccion,Integer)
-            If (Original_Fecha.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_Fecha.Value,Date)
+            If (FechaLetra Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(FechaLetra,String)
             End If
-            If (Original_Precio.HasValue = true) Then
+            If (IdEstatus.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(IdEstatus.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_IdProduccion,Integer)
+            If (Original_Fecha.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_Precio.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_Fecha.Value,Date)
             Else
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             End If
-            If (Original_CantidadBotes.HasValue = true) Then
+            If (Original_Precio.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_CantidadBotes.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_Precio.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
             End If
-            If (Original_SumaBotes.HasValue = true) Then
+            If (Original_CantidadBotes.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_SumaBotes.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_CantidadBotes.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
             End If
-            If (Original_Producto Is Nothing) Then
+            If (Original_SumaBotes.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_SumaBotes.Value,Decimal)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Producto,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(16).Value = CType(IdProduccion,Integer)
+            If (Original_Producto Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_Producto,String)
+            End If
+            If (Original_FechaLetra Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_FechaLetra,String)
+            End If
+            If (Original_IdEstatus.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_IdEstatus.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(22).Value = CType(IdProduccion,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -3225,8 +3539,8 @@ Namespace ChilesDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Fecha As Global.System.Nullable(Of Date), ByVal Precio As Global.System.Nullable(Of Decimal), ByVal CantidadBotes As Global.System.Nullable(Of Integer), ByVal SumaBotes As Global.System.Nullable(Of Decimal), ByVal Producto As String, ByVal Original_IdProduccion As Integer, ByVal Original_Fecha As Global.System.Nullable(Of Date), ByVal Original_Precio As Global.System.Nullable(Of Decimal), ByVal Original_CantidadBotes As Global.System.Nullable(Of Integer), ByVal Original_SumaBotes As Global.System.Nullable(Of Decimal), ByVal Original_Producto As String) As Integer
-            Return Me.Update(Fecha, Precio, CantidadBotes, SumaBotes, Producto, Original_IdProduccion, Original_Fecha, Original_Precio, Original_CantidadBotes, Original_SumaBotes, Original_Producto, Original_IdProduccion)
+        Public Overloads Overridable Function Update(ByVal Fecha As Global.System.Nullable(Of Date), ByVal Precio As Global.System.Nullable(Of Decimal), ByVal CantidadBotes As Global.System.Nullable(Of Integer), ByVal SumaBotes As Global.System.Nullable(Of Decimal), ByVal Producto As String, ByVal FechaLetra As String, ByVal IdEstatus As Global.System.Nullable(Of Integer), ByVal Original_IdProduccion As Integer, ByVal Original_Fecha As Global.System.Nullable(Of Date), ByVal Original_Precio As Global.System.Nullable(Of Decimal), ByVal Original_CantidadBotes As Global.System.Nullable(Of Integer), ByVal Original_SumaBotes As Global.System.Nullable(Of Decimal), ByVal Original_Producto As String, ByVal Original_FechaLetra As String, ByVal Original_IdEstatus As Global.System.Nullable(Of Integer)) As Integer
+            Return Me.Update(Fecha, Precio, CantidadBotes, SumaBotes, Producto, FechaLetra, IdEstatus, Original_IdProduccion, Original_Fecha, Original_Precio, Original_CantidadBotes, Original_SumaBotes, Original_Producto, Original_FechaLetra, Original_IdEstatus, Original_IdProduccion)
         End Function
     End Class
     
