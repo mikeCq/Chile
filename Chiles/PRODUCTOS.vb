@@ -5,6 +5,7 @@ Public Class PRODUCTOS
     Dim cmd As SqlCommand
     Private Sub PRODUCTOS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CargarData()
+        Nuevo()
     End Sub
     Private Sub Nuevo()
         TxIdProducto.Text = ""

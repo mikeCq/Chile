@@ -16,30 +16,9 @@ Public Class LIQUIDACIONES
     Private Sub LIQUIDACIONES_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Nuevo()
         llenaCombos()
-        'llenaDg()
     End Sub
     Private Sub TsNuevo_Click(sender As Object, e As EventArgs) Handles TsNuevo.Click
         Nuevo()
-    End Sub
-    Private Sub llenaDg()
-        Dim cmd As New SqlCommand("sp_LlenarDgProduccionesLiquidacion", cnn)
-        cmd.CommandType = CommandType.StoredProcedure
-        'cmd.Parameters.Add(New SqlClient.SqlParameter("@IdProduccion", codigoSeleccionado))
-        Dim da As New SqlClient.SqlDataAdapter(cmd)
-        Dim dt As New DataTable
-        da.Fill(dt)
-        DgProducciones.DataSource = dt
-        FormatoDgProducciones()
-    End Sub
-    Private Sub FormatoDgProducciones()
-        If DgProducciones.Columns("ChCol") Is Nothing Then
-            Dim checkBoxColumn As New DataGridViewCheckBoxColumn()
-            checkBoxColumn.HeaderText = ""
-            checkBoxColumn.Width = 40
-            checkBoxColumn.Name = "ChCol"
-            DgProducciones.Columns.Insert(0, checkBoxColumn)
-        End If
-        DgProducciones.Columns("idproduccion").Visible = False
     End Sub
     Private Sub llenaCombos()
         cnn.Open()
@@ -89,41 +68,7 @@ Public Class LIQUIDACIONES
         CbEstatus.SelectedIndex = 1
     End Sub
     Private Sub TsConsultar_Click(sender As Object, e As EventArgs) Handles TsConsultar.Click
-        Try
-            Dim consultaLiquidacion As New ConsultaLiquidaciones
-            consultaLiquidacion.ShowDialog()
-            'limpiarcampos()
-            Dim codigoSeleccionado As Object = consultaLiquidacion.CodigoProduccion
-            If codigoSeleccionado <> Nothing Then
-                Dim cmd As New SqlCommand("sp_selProduccion", cnn)
 
-                cmd.CommandType = CommandType.StoredProcedure
-
-                cmd.Parameters.Add(New SqlClient.SqlParameter("@IdProduccion", codigoSeleccionado))
-
-                Dim da As New SqlClient.SqlDataAdapter(cmd)
-                Dim dt As New DataTable
-
-                da.Fill(dt)
-                DgProducciones.DataSource = dt
-
-                Dim row As DataRow = dt.Rows(0)
-                TxIdProduccion.Text = row("IdProduccion")
-                DtFecha.Value = row("Fecha")
-                TxCantidadBotes.Text = row("CantidadBotes")
-                NuTotalPagar.Value = row("SumaBotes")
-                NuPrecio.Value = row("Precio")
-                CbProducto.Text = CStr(row("Producto"))
-                CbEstatus.SelectedValue = CStr(row("IdEstatus"))
-
-                CargaBotes(TxIdProduccion.Text)
-            End If
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        Finally
-            'GbAbrir.Enabled = False
-            'GbCaptura.Enabled = True
-        End Try
     End Sub
     Private Sub CargaBotes(ByVal CodigoProducccion As Integer)
         Dim resultado As Boolean = False
@@ -151,57 +96,13 @@ Public Class LIQUIDACIONES
         DgBotesIngresados.DataSource = ""
         DgBotesIngresados.Columns.Clear()
     End Sub
-
-    Private Sub BtAgregar_Click(sender As Object, e As EventArgs) Handles BtAgregar.Click
-        'Agregar()
-    End Sub
-    Private Sub Agregar()
-        DgBotesIngresados.Columns.Clear()
-        DgBotesIngresados.DataSource = Nothing
-        DtBotes.Clear()
-        Dim Total As Integer = 0
-        'propiedadesDataProdSelec()
-        Dim Contador As Integer
-        For Contador = 0 To DgProducciones.RowCount - 1
-            If DgProducciones.Rows(Contador).Cells("ChCol").Value = True Then
-                Try
-                    ' Creo el DataTable que llenaremos con Fill
-                    cnn.Open()
-                    Dim cmd As New SqlCommand("sp_LlenaDgBotes", cnn)
-                    cmd.CommandType = CommandType.StoredProcedure
-                    cmd.Parameters.Add(New SqlParameter("@IdProduccion", DgProducciones.Rows(Contador).Cells("IdProduccion").Value))
-                    ' Llenamos el DataTable donde traemos el producto
-                    Dim da As New SqlDataAdapter(cmd)
-                    Dim dt As New DataTable
-                    da.Fill(DtBotes)
-                    Total = Total + DgProducciones.Rows(Contador).Cells("cantidadbotes").Value
-                Catch ex As Exception
-                    MsgBox("Problemas al conectar con al base de datos ")
-                Finally
-                    cnn.Close()
-                End Try
-                'DgSeleccionLiquidaciones.Rows.Add(DgEntradasLiq.Rows(Contador).Cells("IdInventario").Value.ToString(), DgEntradasLiq.Rows(Contador).Cells("numeroBoleta").Value, DgEntradasLiq.Rows(Contador).Cells("Id_cliente").Value.ToString(), DgEntradasLiq.Rows(Contador).Cells("Fecha_Pesaje").Value, DgEntradasLiq.Rows(Contador).Cells("grupoGrano").Value.ToString(), DgEntradasLiq.Rows(Contador).Cells("Neto").Value, DgEntradasLiq.Rows(Contador).Cells("Deducciones").Value, DgEntradasLiq.Rows(Contador).Cells("Total").Value)
-            End If
-        Next Contador
-        DgBotesIngresados.DataSource = DtBotes
-        TbTotal.Text = Total
-    End Sub
-    Private Sub consultaproducto(ByVal bb As String, ByVal dgv As DataGridView)
-
-    End Sub
     Private Sub TsGuardar_Click(sender As Object, e As EventArgs) Handles TsGuardar.Click
-        'Dim Contador As Integer
-        'For Contador = 0 To DgProducciones.RowCount - 1
-        'If DgProducciones.Rows(Contador).Cells("ChCol").Value = True Then
         Try
-            'Cambiar el estado
             cnn.Open()
             cmd = New SqlCommand("sp_InsLiqDet", cnn)
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.Add(New SqlParameter("@IdProduccion", TxIdProduccion.Text))
             cmd.ExecuteNonQuery()
-            llenaDg()
-
         Catch ex As Exception
             MsgBox("Problemas al conectar con al base de datos ")
         Finally
@@ -213,23 +114,12 @@ Public Class LIQUIDACIONES
 
             End If
         End Try
-        'End If
-        'Next Contador
     End Sub
     Private Sub ImprimirReporte()
         _codigoProduccion = TxIdProduccion.Text
         REPORTELIQUIDACION.ShowDialog()
     End Sub
-    Private Sub DgProducciones_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgProducciones.CellContentClick
-        Dim Contador As Integer
-        For Contador = 0 To DgProducciones.RowCount - 1
-            If DgProducciones.Rows(Contador).Selected Then
-                If DgProducciones.Rows(Contador).Cells("ChCol").Value = False Then
-                    DgProducciones.Rows(Contador).Cells("ChCol").Value = True
-                ElseIf DgProducciones.Rows(Contador).Cells("ChCol").Value = True Then
-                    DgProducciones.Rows(Contador).Cells("ChCol").Value = False
-                End If
-            End If
-        Next Contador
+    Private Sub TsImprimir_Click(sender As Object, e As EventArgs) Handles TsImprimir.Click
+        ImprimirReporte()
     End Sub
 End Class

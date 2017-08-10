@@ -246,6 +246,7 @@
     <None Include="Resources\Black Icon Package Icon 21.ico" />
     <Content Include="Scripts\Procedures\dbo.sp_EliProducto.sql" />
     <Content Include="Scripts\Procedures\dbo.sp_InsBotes.sql" />
+    <Content Include="Scripts\Procedures\dbo.sp_InsLiqDet_1.sql" />
     <Content Include="Scripts\Procedures\dbo.sp_InsProduccion.sql" />
     <Content Include="Scripts\Procedures\dbo.sp_InsProducto.sql" />
     <Content Include="Scripts\Procedures\dbo.Sp_LlenaDgBotes.sql" />

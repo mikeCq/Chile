@@ -41,13 +41,14 @@ Partial Class Produccion
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.TsConsultar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
+        Me.TsSalir = New System.Windows.Forms.ToolStripLabel()
         Me.GbAbrir = New System.Windows.Forms.GroupBox()
         Me.CbEstatus = New System.Windows.Forms.ComboBox()
+        Me.TxNombreDia = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GbCaptura = New System.Windows.Forms.GroupBox()
         Me.DtFecha = New System.Windows.Forms.DateTimePicker()
-        Me.TxNombreDia = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.DgBoteIngresado, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NuPrecio, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
@@ -157,7 +158,7 @@ Partial Class Produccion
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TsNuevo, Me.ToolStripButton2, Me.TsGuardar, Me.ToolStripSeparator2, Me.TsEliminar, Me.ToolStripSeparator3, Me.TsConsultar, Me.ToolStripSeparator1, Me.ToolStripLabel1})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TsNuevo, Me.ToolStripButton2, Me.TsGuardar, Me.ToolStripSeparator2, Me.TsEliminar, Me.ToolStripSeparator3, Me.TsConsultar, Me.ToolStripSeparator1, Me.TsSalir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(825, 25)
@@ -220,12 +221,12 @@ Partial Class Produccion
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
         '
-        'ToolStripLabel1
+        'TsSalir
         '
-        Me.ToolStripLabel1.Image = Global.Chiles.My.Resources.Resources.Black_Icon_Package_Icon_21
-        Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(45, 22)
-        Me.ToolStripLabel1.Text = "Salir"
+        Me.TsSalir.Image = Global.Chiles.My.Resources.Resources.Black_Icon_Package_Icon_21
+        Me.TsSalir.Name = "TsSalir"
+        Me.TsSalir.Size = New System.Drawing.Size(45, 22)
+        Me.TsSalir.Text = "Salir"
         '
         'GbAbrir
         '
@@ -236,6 +237,7 @@ Partial Class Produccion
         Me.GbAbrir.Controls.Add(Me.TxIdProduccion)
         Me.GbAbrir.Controls.Add(Me.BtIniciar)
         Me.GbAbrir.Controls.Add(Me.Label1)
+        Me.GbAbrir.Controls.Add(Me.Label5)
         Me.GbAbrir.Controls.Add(Me.Label4)
         Me.GbAbrir.Controls.Add(Me.Label2)
         Me.GbAbrir.Location = New System.Drawing.Point(0, 28)
@@ -252,6 +254,14 @@ Partial Class Produccion
         Me.CbEstatus.Name = "CbEstatus"
         Me.CbEstatus.Size = New System.Drawing.Size(125, 21)
         Me.CbEstatus.TabIndex = 2
+        '
+        'TxNombreDia
+        '
+        Me.TxNombreDia.Enabled = False
+        Me.TxNombreDia.Location = New System.Drawing.Point(699, 59)
+        Me.TxNombreDia.Name = "TxNombreDia"
+        Me.TxNombreDia.Size = New System.Drawing.Size(114, 20)
+        Me.TxNombreDia.TabIndex = 0
         '
         'Label4
         '
@@ -282,13 +292,14 @@ Partial Class Produccion
         Me.DtFecha.Size = New System.Drawing.Size(114, 20)
         Me.DtFecha.TabIndex = 4
         '
-        'TxNombreDia
+        'Label5
         '
-        Me.TxNombreDia.Enabled = False
-        Me.TxNombreDia.Location = New System.Drawing.Point(699, 59)
-        Me.TxNombreDia.Name = "TxNombreDia"
-        Me.TxNombreDia.Size = New System.Drawing.Size(114, 20)
-        Me.TxNombreDia.TabIndex = 0
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(631, 62)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(29, 13)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "Dia :"
         '
         'Produccion
         '
@@ -340,7 +351,8 @@ Partial Class Produccion
     Friend WithEvents Label4 As Label
     Friend WithEvents CbEstatus As ComboBox
     Friend WithEvents DtFecha As DateTimePicker
-    Friend WithEvents ToolStripLabel1 As ToolStripLabel
+    Friend WithEvents TsSalir As ToolStripLabel
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Friend WithEvents TxNombreDia As TextBox
+    Friend WithEvents Label5 As Label
 End Class

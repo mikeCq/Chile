@@ -152,6 +152,7 @@ Partial Class PRODUCTOS
         Me.Controls.Add(Me.ToolStrip1)
         Me.MinimumSize = New System.Drawing.Size(548, 431)
         Me.Name = "PRODUCTOS"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "PRODUCTOS"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()

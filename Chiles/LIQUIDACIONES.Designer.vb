@@ -23,9 +23,6 @@ Partial Class LIQUIDACIONES
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LIQUIDACIONES))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.TsNuevo = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripSeparator()
@@ -47,19 +44,14 @@ Partial Class LIQUIDACIONES
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GbLiquidacion = New System.Windows.Forms.GroupBox()
         Me.CbProducto = New System.Windows.Forms.ComboBox()
-        Me.DgBotesIngresados = New System.Windows.Forms.DataGridView()
-        Me.DgProducciones = New System.Windows.Forms.DataGridView()
-        Me.BtAgregar = New System.Windows.Forms.Button()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TbTotal = New System.Windows.Forms.TextBox()
-        Me.NuPrecio = New System.Windows.Forms.NumericUpDown()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.NuPrecio = New System.Windows.Forms.NumericUpDown()
+        Me.DgBotesIngresados = New System.Windows.Forms.DataGridView()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.NuTotalPagar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GbLiquidacion.SuspendLayout()
-        CType(Me.DgBotesIngresados, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DgProducciones, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NuPrecio, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DgBotesIngresados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ToolStrip1
@@ -241,6 +233,25 @@ Partial Class LIQUIDACIONES
         Me.CbProducto.Size = New System.Drawing.Size(121, 21)
         Me.CbProducto.TabIndex = 6
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(225, 52)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(43, 13)
+        Me.Label8.TabIndex = 7
+        Me.Label8.Text = "Precio :"
+        '
+        'NuPrecio
+        '
+        Me.NuPrecio.DecimalPlaces = 2
+        Me.NuPrecio.Location = New System.Drawing.Point(274, 49)
+        Me.NuPrecio.Maximum = New Decimal(New Integer() {99999999, 0, 0, 0})
+        Me.NuPrecio.Name = "NuPrecio"
+        Me.NuPrecio.Size = New System.Drawing.Size(114, 20)
+        Me.NuPrecio.TabIndex = 5
+        Me.NuPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
         'DgBotesIngresados
         '
         Me.DgBotesIngresados.AllowUserToAddRows = False
@@ -261,95 +272,11 @@ Partial Class LIQUIDACIONES
         Me.DgBotesIngresados.Size = New System.Drawing.Size(1041, 333)
         Me.DgBotesIngresados.TabIndex = 11
         '
-        'DgProducciones
-        '
-        Me.DgProducciones.AllowUserToAddRows = False
-        Me.DgProducciones.AllowUserToDeleteRows = False
-        Me.DgProducciones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.DgProducciones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
-        Me.DgProducciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgProducciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DgProducciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgProducciones.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.DgProducciones.Location = New System.Drawing.Point(0, 187)
-        Me.DgProducciones.Name = "DgProducciones"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgProducciones.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.DgProducciones.RowHeadersVisible = False
-        Me.DgProducciones.RowHeadersWidth = 40
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DgProducciones.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.DgProducciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgProducciones.Size = New System.Drawing.Size(494, 80)
-        Me.DgProducciones.TabIndex = 13
-        '
-        'BtAgregar
-        '
-        Me.BtAgregar.Location = New System.Drawing.Point(0, 273)
-        Me.BtAgregar.Name = "BtAgregar"
-        Me.BtAgregar.Size = New System.Drawing.Size(124, 44)
-        Me.BtAgregar.TabIndex = 14
-        Me.BtAgregar.Text = "Agregar Botes"
-        Me.BtAgregar.UseVisualStyleBackColor = True
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(810, 285)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(113, 13)
-        Me.Label7.TabIndex = 15
-        Me.Label7.Text = "TOTAL DE BOTES"
-        '
-        'TbTotal
-        '
-        Me.TbTotal.Location = New System.Drawing.Point(929, 282)
-        Me.TbTotal.Name = "TbTotal"
-        Me.TbTotal.Size = New System.Drawing.Size(112, 20)
-        Me.TbTotal.TabIndex = 16
-        '
-        'NuPrecio
-        '
-        Me.NuPrecio.DecimalPlaces = 2
-        Me.NuPrecio.Location = New System.Drawing.Point(274, 49)
-        Me.NuPrecio.Maximum = New Decimal(New Integer() {99999999, 0, 0, 0})
-        Me.NuPrecio.Name = "NuPrecio"
-        Me.NuPrecio.Size = New System.Drawing.Size(114, 20)
-        Me.NuPrecio.TabIndex = 5
-        Me.NuPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(225, 52)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(43, 13)
-        Me.Label8.TabIndex = 7
-        Me.Label8.Text = "Precio :"
-        '
         'LIQUIDACIONES
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1041, 659)
-        Me.Controls.Add(Me.TbTotal)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.BtAgregar)
-        Me.Controls.Add(Me.DgProducciones)
         Me.Controls.Add(Me.DgBotesIngresados)
         Me.Controls.Add(Me.GbLiquidacion)
         Me.Controls.Add(Me.Label1)
@@ -362,9 +289,8 @@ Partial Class LIQUIDACIONES
         CType(Me.NuTotalPagar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GbLiquidacion.ResumeLayout(False)
         Me.GbLiquidacion.PerformLayout()
-        CType(Me.DgBotesIngresados, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DgProducciones, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NuPrecio, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DgBotesIngresados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -392,10 +318,6 @@ Partial Class LIQUIDACIONES
     Friend WithEvents GbLiquidacion As GroupBox
     Friend WithEvents CbProducto As ComboBox
     Friend WithEvents DgBotesIngresados As DataGridView
-    Friend WithEvents DgProducciones As DataGridView
-    Friend WithEvents BtAgregar As Button
-    Friend WithEvents Label7 As Label
-    Friend WithEvents TbTotal As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents NuPrecio As NumericUpDown
 End Class

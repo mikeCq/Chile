@@ -32,9 +32,9 @@ Partial Class CONSULTAPRODUCCION
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.TsNuevo = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
-        Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
+        Me.TsConsultar = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.TsSalir = New System.Windows.Forms.ToolStripLabel()
         CType(Me.DgProducciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -114,7 +114,7 @@ Partial Class CONSULTAPRODUCCION
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TsNuevo, Me.ToolStripButton2, Me.ToolStripLabel1, Me.ToolStripSeparator1, Me.ToolStripLabel2})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TsNuevo, Me.ToolStripButton2, Me.TsConsultar, Me.ToolStripSeparator1, Me.TsSalir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(846, 25)
@@ -134,24 +134,24 @@ Partial Class CONSULTAPRODUCCION
         Me.ToolStripButton2.Name = "ToolStripButton2"
         Me.ToolStripButton2.Size = New System.Drawing.Size(6, 25)
         '
-        'ToolStripLabel1
+        'TsConsultar
         '
-        Me.ToolStripLabel1.Image = Global.Chiles.My.Resources.Resources.Consultar
-        Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(74, 22)
-        Me.ToolStripLabel1.Text = "Consultar"
-        '
-        'ToolStripLabel2
-        '
-        Me.ToolStripLabel2.Image = Global.Chiles.My.Resources.Resources.Black_Icon_Package_Icon_21
-        Me.ToolStripLabel2.Name = "ToolStripLabel2"
-        Me.ToolStripLabel2.Size = New System.Drawing.Size(45, 22)
-        Me.ToolStripLabel2.Text = "Salir"
+        Me.TsConsultar.Image = Global.Chiles.My.Resources.Resources.Consultar
+        Me.TsConsultar.Name = "TsConsultar"
+        Me.TsConsultar.Size = New System.Drawing.Size(74, 22)
+        Me.TsConsultar.Text = "Consultar"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
+        '
+        'TsSalir
+        '
+        Me.TsSalir.Image = Global.Chiles.My.Resources.Resources.Black_Icon_Package_Icon_21
+        Me.TsSalir.Name = "TsSalir"
+        Me.TsSalir.Size = New System.Drawing.Size(45, 22)
+        Me.TsSalir.Text = "Salir"
         '
         'CONSULTAPRODUCCION
         '
@@ -187,7 +187,7 @@ Partial Class CONSULTAPRODUCCION
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents TsNuevo As ToolStripButton
     Friend WithEvents ToolStripButton2 As ToolStripSeparator
-    Friend WithEvents ToolStripLabel1 As ToolStripLabel
-    Friend WithEvents ToolStripLabel2 As ToolStripLabel
+    Friend WithEvents TsConsultar As ToolStripLabel
+    Friend WithEvents TsSalir As ToolStripLabel
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
 End Class

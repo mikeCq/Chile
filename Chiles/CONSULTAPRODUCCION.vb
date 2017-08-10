@@ -17,22 +17,24 @@ Public Class CONSULTAPRODUCCION
         DgProducciones.DataSource = ""
         DgProducciones.Columns.Clear()
     End Sub
-    Private Sub BtBuscar_Click(sender As Object, e As EventArgs)
-        cargarData()
-    End Sub
-    Private Sub cargarData()
-        cnn.Open()
-        Dim cmd As New SqlCommand("sp_LlenaDgBusquedaProduccion", cnn)
-        cmd.CommandType = CommandType.StoredProcedure
-        cmd.Parameters.Add(New SqlParameter("@FechaIni", DtInicial.Value))
-        cmd.Parameters.Add(New SqlParameter("@FechaFin", DtFinal.Value))
-        cmd.Parameters.Add(New SqlParameter("@Producto", CbProducto.Text))
-        cmd.Parameters.Add(New SqlParameter("@IdEstatus", 1))
-        Dim da As New SqlDataAdapter(cmd)
-        Dim dt As New DataTable
-        da.Fill(dt)
-        DgProducciones.DataSource = dt
-        cnn.Close()
+    Private Sub cargarData() Handles TsConsultar.Click
+        If DtInicial.Value > DtFinal.Value Then
+            MessageBox.Show("La fecha inicial no puede ser mayor a la final.", "Aviso")
+        ElseIf DtFinal.Value < DtInicial.Value Then
+            MessageBox.Show("La fecha final no puede ser menor a la inicial.", "Aviso")
+        Else
+            cnn.Open()
+            Dim cmd As New SqlCommand("sp_LlenaDgBusquedaProduccion", cnn)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add(New SqlParameter("@FechaIni", DtInicial.Value))
+            cmd.Parameters.Add(New SqlParameter("@FechaFin", DtFinal.Value))
+            cmd.Parameters.Add(New SqlParameter("@Producto", CbProducto.Text))
+            Dim da As New SqlDataAdapter(cmd)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            DgProducciones.DataSource = dt
+            cnn.Close()
+        End If
     End Sub
     Private Sub llenaCombos()
         cnn.Open()
@@ -53,28 +55,6 @@ Public Class CONSULTAPRODUCCION
         CbProducto.ValueMember = "IdProducto"
         CbProducto.SelectedIndex = -1
         cnn.Close()
-
-        'Dim dt As DataTable = New DataTable("Tabla")
-
-        'dt.Columns.Add("Codigo")
-        'dt.Columns.Add("Descripcion")
-
-        'Dim dr As DataRow
-
-        'dr = dt.NewRow()
-        'dr("Codigo") = "0"
-        'dr("Descripcion") = "CERRADO"
-        'dt.Rows.Add(dr)
-
-        'dr = dt.NewRow()
-        'dr("Codigo") = "1"
-        'dr("Descripcion") = "ABIERTO"
-        'dt.Rows.Add(dr)
-
-        'CbEstatus.DataSource = dt
-        'CbEstatus.ValueMember = "Codigo"
-        'CbEstatus.DisplayMember = "Descripcion"
-        'CbEstatus.SelectedIndex = -1
     End Sub
 
     Private Sub SeleccionProducto(sender As Object, e As EventArgs) Handles DgProducciones.DoubleClick
@@ -91,7 +71,7 @@ Public Class CONSULTAPRODUCCION
         CbProducto.Text = ""
         DgProducciones.DataSource = Nothing
     End Sub
-    Private Sub ToolStripLabel1_Click(sender As Object, e As EventArgs) Handles ToolStripLabel1.Click
+    Private Sub ToolStripLabel1_Click(sender As Object, e As EventArgs)
         cnn.Open()
         Dim cmd As New SqlCommand("sp_ConProduccion", cnn)
         cmd.CommandType = CommandType.StoredProcedure
@@ -106,7 +86,7 @@ Public Class CONSULTAPRODUCCION
         DgProducciones.DataSource = dt
         cnn.Close()
     End Sub
-    Private Sub ToolStripLabel2_Click(sender As Object, e As EventArgs) Handles ToolStripLabel2.Click
+    Private Sub ToolStripLabel2_Click(sender As Object, e As EventArgs) Handles TsSalir.Click
         Close()
     End Sub
 End Class

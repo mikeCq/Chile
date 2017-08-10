@@ -42,7 +42,7 @@ Partial Class REPORTELIQUIDACION
         Me.CrLiquidacion.ShowParameterPanelButton = False
         Me.CrLiquidacion.ShowRefreshButton = False
         Me.CrLiquidacion.ShowTextSearchButton = False
-        Me.CrLiquidacion.Size = New System.Drawing.Size(1042, 748)
+        Me.CrLiquidacion.Size = New System.Drawing.Size(1042, 733)
         Me.CrLiquidacion.TabIndex = 1
         Me.CrLiquidacion.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
@@ -50,10 +50,11 @@ Partial Class REPORTELIQUIDACION
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1042, 748)
+        Me.ClientSize = New System.Drawing.Size(1042, 733)
         Me.Controls.Add(Me.CrLiquidacion)
         Me.Name = "REPORTELIQUIDACION"
         Me.Text = "REPORTELIQUIDACION"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 
     End Sub

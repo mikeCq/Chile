@@ -34,7 +34,6 @@ Public Class ConsultaLiquidaciones
         CbProducto.ValueMember = "IdProducto"
         CbProducto.SelectedIndex = -1
         cnn.Close()
-
     End Sub
     Private Sub BtBuscar_Click(sender As Object, e As EventArgs) Handles BtBuscar.Click
         cargarData()
@@ -52,7 +51,6 @@ Public Class ConsultaLiquidaciones
         da.Fill(dt)
         DgProducciones.DataSource = dt
         cnn.Close()
-
     End Sub
     Private Sub SeleccionaLiquidacion() Handles DgProducciones.DoubleClick
         If DgProducciones.RowCount = 0 Then
