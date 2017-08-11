@@ -68,7 +68,35 @@ Public Class LIQUIDACIONES
         CbEstatus.SelectedIndex = 1
     End Sub
     Private Sub TsConsultar_Click(sender As Object, e As EventArgs) Handles TsConsultar.Click
+        Try
+            Dim consultaLiquidacion As New ConsultaLiquidaciones
+            consultaLiquidacion.ShowDialog()
+            Dim codigoSeleccionado As Object = consultaLiquidacion.CodigoProduccion
+            If codigoSeleccionado <> Nothing Then
+                Dim cmd As New SqlCommand("sp_selProduccion", cnn)
 
+                cmd.CommandType = CommandType.StoredProcedure
+
+                cmd.Parameters.Add(New SqlClient.SqlParameter("@IdProduccion", codigoSeleccionado))
+
+                Dim da As New SqlClient.SqlDataAdapter(cmd)
+                Dim dt As New DataTable
+
+                da.Fill(dt)
+                Dim row As DataRow = dt.Rows(0)
+                TxIdProduccion.Text = row("IdProduccion")
+                DtFecha.Value = row("Fecha")
+                TxCantidadBotes.Text = row("CantidadBotes")
+                NuTotalPagar.Value = row("SumaBotes")
+                NuPrecio.Value = row("Precio")
+                CbProducto.Text = CStr(row("Producto"))
+                CbEstatus.SelectedValue = CStr(row("IdEstatus"))
+
+                CargaBotes(TxIdProduccion.Text)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
     End Sub
     Private Sub CargaBotes(ByVal CodigoProducccion As Integer)
         Dim resultado As Boolean = False
@@ -103,6 +131,7 @@ Public Class LIQUIDACIONES
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.Add(New SqlParameter("@IdProduccion", TxIdProduccion.Text))
             cmd.ExecuteNonQuery()
+
         Catch ex As Exception
             MsgBox("Problemas al conectar con al base de datos ")
         Finally
